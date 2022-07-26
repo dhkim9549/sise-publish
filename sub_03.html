@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>HF 한국주택금융공사</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=medium-dpi" />  
+
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/df-number-format/2.1.6/jquery.number.min.js"></script>
+<script>
+
+var windowObjectReference = null;
+
+function openNewWindow(url) {
+  var name = '_blank';
+  var specs = 'menubar=no,status=no,toolbar=no,top=50,left=100,width=850,height=850';
+  if(windowObjectReference == null || windowObjectReference.closed) {
+    windowObjectReference = window.open(url, name, specs);
+  } else {
+    windowObjectReference.focus();
+  }
+}
+
+let gReturnValue = {
+  rsltPrc: 0
+};
+
+function getReturnValue(returnValue) {
+  gReturnValue = JSON.parse(returnValue);
+  hsPrc.value = gReturnValue.rsltPrc;
+  $('#hsPrc').number(true, 0);
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  $('#hsPrc').number(true, 0);
+  $('#openNewWindowButton').click(function() {
+    openNewWindow('sise/sise.html');
+  });
+});
+
+</script>
+
+
+<link rel="stylesheet" href="css/font/font.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/layout.css">	
+<link rel="stylesheet" href="css/content.css">	
+
+<style>
+.btn_login_wrap {margin:0;}
+.btn_login {
+  display:block;width:150px;padding:13px 0 13px;
+  border:solid 1px rgba(0,0,0,.15);background-color:#B40F1F;box-sizing:border-box;padding:13px 0;border-radius:5.4px
+}
+.btn_text {
+  font-family:'NotoKrR';font-size:20px;font-weight:700;line-height:24px;color:#fbfbfd;letter-spacing:-.5px
+}
+.preference {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  margin-bottom: 0.7em;
+}
+@media only screen and (min-width: 992px) {
+  .preference {
+    width: 100%;
+  }
+}
+.textinput_addr{border-radius:1px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;font-size:13px;height:25px;padding:1px 8px}
+.textinput_addr:focus{box-shadow:inset 0 1px 2px rgba(0,0,0,.3);border:1px solid #4d90fe;outline:none}
+</style>
+
+<body>
+<div class="skip-navigation">
+	<a href="#gnb_top">주메뉴바로가기</a>
+	<a href="#container">콘텐츠바로가기</a>
+</div>
+
+
+<header>
+    <div class="header">
+
+		<h1><a href="/"></a><span>안심전환대출</span></h1>
+		<button type="button" class="toggle" id="mn-ctrs-btns2">메뉴</button>
+		
+		<nav class="mobile-gnb" id="gnb_top">
+			
+			<ul class="top_menulist">			
+				<li class="secs"><a href="sub_01.html" class="depth1-1">소개</a>
+					<div class="sub-gnb">
+						<ul class="depth2">
+							<li><a href="#">인적항목</a></li>
+							<li><a href="#">소득항목</a></li>
+							<li><a href="#">부채항목</a></li>
+							<li><a href="#">담보항목</a></li>
+							<li><a href="#">대출항목</a></li>
+							<li><a href="#">유의사항</a></li>
+						</ul>
+					</div>
+				</li>  
+				<li class="secs"><a href="sub_02.html" class="depth1-1">필요서류</a></li>
+				<li class="secs"><a href="sub_03.html" class="depth1-1">신청자격 사전확인</a></li>
+				<li class="secs"><a href="sub_04.html" class="depth1-1">신청하기</a>
+					<div class="sub-gnb">
+						<ul class="depth2">
+							<li><a href="sub_04.html">취급금융기관안내</a></li>
+							<li><a href="sub_05.html">절차준비</a></li>
+							<li><a href="sub_06.html">신청준비</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul> 
+		</nav>
+	</div>
+	
+</header>
+<div class="mask-wrap"></div>
+
+
+
+<div id="container">
+	
+	
+		<div id="content">
+			<div class="con_tit">
+				<h2>신청자격 사전확인</h2>				
+			</div>
+
+			<div class="conts">
+
+
+				
+				
+				<!-- 1번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">국적</div>
+					<div class="question"> 
+						<div class="question1">신청인은 주민등록 등본 상 한국에 거주하고 계십니까?</div>					
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio1" id="agree_1" value="Y" required=""> <label for="agree_1"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio1" id="agree_2" value="N" > <label for="agree_2"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+				<!-- 2번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">배우자 국내 거주</div>
+					<div class="question"> 
+						<div class="question1">신청인의 배우자는 주민등록 등본 혹은 국내거소사실증명이 발급이 가능합니까?</div>					
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio2" id="agree_3" value="Y" required=""> <label for="agree_3"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio2" id="agree_4" value="N"> <label for="agree_4"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+
+				<!-- 3번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">부부합산 연소득<br />(미혼인 경우 단독)</div>
+					<div class="question"> 
+						<div class="question1">7천만원 이하인가요?</div>					
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio3" id="agree_5" value="Y" required=""> <label for="agree_5"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio3" id="agree_6" value="N"> <label for="agree_6"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+
+				<!-- 4번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">상환 부채 정보</div>
+					<div class="question"> 
+						<div class="question1">상환하려는 대출이 기업대출 혹은 대부업에서 받은 대출입니까?</div>					
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio4" id="agree_7" value="Y" required=""> <label for="agree_7"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio4" id="agree_8" value="N"> <label for="agree_8"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+
+				<!-- 5번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">상환 부채 정보</div>
+					<div class="question"> 
+						<div class="question1">본인 혹은 배우자(부부공동명의 포함) 소유의 주택으로 받은 가장 오래된 주택담보대출<br />(잔액이 있는 대출 기준)이 6개 은행* 대출 중 하나입니까?
+							<p class="font16 c_green mt8">※ 6개 은행 : 기업, 국민, 농협, 신한, 우리, 하나</p>
+						</div>					
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio5" id="agree_21" value="Y" required=""> <label for="agree_21"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio5" id="agree_22" value="N"> <label for="agree_22"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+
+				<!-- 6번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">상환 부채 정보</div>
+					<div class="question"> 
+						<div class="question1">안심전환대출을 통해 상환하시려는 대출이 고정금리*가 아닌 변동금리 대출입니까?
+							<p class="font16 c_green mt8">※ 5년 주기 변동금리 대출 혹은 고정금리 대출</p>
+						</div>					
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio6" id="agree_9" value="Y" required=""> <label for="agree_9"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio6" id="agree_10" value="N"> <label for="agree_10"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+
+				<!-- 7번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">주택보유</div>
+					<div class="question"> 
+						<div class="question1">부부 합산 기준, 본 건 외에 다른 소유 주택*이 있습니까?
+							<p class="font16 c_green mt8">※ 조합원 입주권 및 분양권 포함</p>
+						</div>					
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio7" id="agree_11" value="Y" required=""> <label for="agree_11"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio7" id="agree_12" value="N"> <label for="agree_12"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+
+				<!-- 8번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">주택 명의자<br />(담보 제공자)</div>
+					<div class="question"> 
+						<div class="question1">주택 소유자는 누구입니까?
+							<p class="font16 c_red mt8">※위 해당사항이 없는 경우 신청 불가</p>
+						</div>					
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio8" id="agree_13" value="Y" required=""> <label for="agree_13"><span></span>본인</label></span>
+							<span class="check_box"><input type="radio" name="radio8" id="agree_14" value="N"> <label for="agree_14"><span></span>배우자</label></span>
+							<span class="check_box"><input type="radio" name="radio8" id="agree_15" value="N"> <label for="agree_15"><span></span>부부공동명의</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+
+				<!-- 9번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">주택 시세</div>
+					<div class="question_sub">
+					  <!--
+						<dl>
+							<dt>주택유형</dt>
+							<dd>
+								<button type="button" class="btn_type active"><span></span>아파트</button>
+								<button type="button" class="btn_type"><span></span>연립</button>
+								<button type="button" class="btn_type"><span></span>다세대</button>
+								<button type="button" class="btn_type"><span></span>단독주택</button>
+							</dd>
+						</dl>
+						<dl>
+							<dt>담보물 주소</dt>
+							<dd>
+								<input type="text" class="" size="10"/><button type="button" class="btn_post">우편번호 검색</button>
+								<input type="text" class="mt8 wps_100" /> 
+								<p class="type_txt">담보주택이 최저층(1층, 101호 등)이면 예를 선택하세요.</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>최저층 여부</dt>
+							<dd>
+								<div class="agree_check">
+									<span class="check_box"><input type="radio" name="radio11" id="agree_23" value="Y" required=""> <label for="agree_23"><span></span>예</label></span>
+									<span class="check_box"><input type="radio" name="radio11" id="agree_24" value="N"> <label for="agree_24"><span></span>아니요</label></span>								
+								</div>	
+							</dd>
+						</dl>
+						-->
+						<dl>
+							<dt>
+								<button class="btn_login" id="openNewWindowButton">
+									<span class="btn_text">시세 조회</span>
+								</button>
+							</dt>
+							<dd>
+								<div class="preference">
+									<label for="name" class="label_req">예상 담보평가액</label>
+									<div>
+										<input type="text" id="hsPrc" name="hsPrc" maxlength="20" size="20" class="textinput_addr" style="text-align:end; width:20em; font-size:16px;">
+									</div>
+									<p class="type_txt">시세(또는 예상 주택가격)과 매매가액 중 낮은 금액이 적용됩니다. </p>
+								</div>
+
+
+								<!--
+								<input type="text" class="wps_100 input_txt" /> 
+								<p class="type_txt">시세(또는 예상 주택가격)과 매매가액 중 낮은 금액이 적용됩니다. </p>
+								-->
+							</dd>
+						</dl>
+					</div>
+
+									
+				</div>
+
+
+				<!-- 10번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">취급 요건 대상자</div>
+					<div class="question"> 
+						<div class="question1">사전 안내 페이지 내용의 취급 요건에 부합되지 않는 신청자는 절차 진행 과정에서 승인되지<br /> 아니 할 수 있습니다.</div>					
+						<div class="agree_check">							
+							<span class="check_box"><input type="radio" name="radio10" id="agree_16" value="N"> <label for="agree_16"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio10" id="agree_17" value="N"> <label for="agree_17"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+				<div class="btn taC">
+					<a href="#" class="result btn_result">결과조회<span></span></a>
+				</div>
+
+
+				<div class="modal">
+					<div class="modal_top"><a href="#" class="modal_close"><img src="img/modal_close.png" alt="닫기" /></a></div>
+					<div class="modal_bottom">
+						대출 가능여부 내용
+						<a href="#" class="modal_close btn_close">닫기</a>
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+	
+</div>
+<footer>
+	 <div id="foot">
+		
+		<div class="copy_info">
+			<div class="addtel"><address>부산시 남구 문현금융로40(문현동) 부산국제금융센터 한국주택금융공사 <span>콜센터 1688-8114</span></address></div>
+			<p class="copyright">2022 KOREA HOUSING FINANCE CORPORATION. ALL Rights Reserced.</p>
+		</div>		
+	 </div>
+</footer>
+</body>
+</html>
+

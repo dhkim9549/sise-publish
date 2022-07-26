@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>HF 한국주택금융공사</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=medium-dpi" />  
+
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/common.js"></script>
+
+
+<link rel="stylesheet" href="css/font/font.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/layout.css">	
+<link rel="stylesheet" href="css/content.css">	
+<body>
+<div class="skip-navigation">
+	<a href="#gnb_top">주메뉴바로가기</a>
+	<a href="#container">콘텐츠바로가기</a>
+</div>
+
+
+<header>
+    <div class="header">
+
+		<h1><a href="/"></a><span>안심전환대출</span></h1>
+		<button type="button" class="toggle" id="mn-ctrs-btns2">메뉴</button>
+		
+		<nav class="mobile-gnb" id="gnb_top">
+			
+			<ul class="top_menulist">			
+				<li class="secs"><a href="sub_01.html" class="depth1-1">소개</a>
+					<div class="sub-gnb">
+						<ul class="depth2">
+							<li><a href="#">인적항목</a></li>
+							<li><a href="#">소득항목</a></li>
+							<li><a href="#">부채항목</a></li>
+							<li><a href="#">담보항목</a></li>
+							<li><a href="#">대출항목</a></li>
+							<li><a href="#">유의사항</a></li>
+						</ul>
+					</div>
+				</li>  
+				<li class="secs"><a href="sub_02.html" class="depth1-1">필요서류</a></li>
+				<li class="secs"><a href="sub_03.html" class="depth1-1">신청자격 사전확인</a></li>
+				<li class="secs"><a href="sub_04.html" class="depth1-1">신청하기</a>
+					<div class="sub-gnb">
+						<ul class="depth2">
+							<li><a href="sub_04.html">취급금융기관안내</a></li>
+							<li><a href="sub_05.html">절차준비</a></li>
+							<li><a href="sub_06.html">신청준비</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul> 
+		</nav>
+	</div>
+	
+</header>
+<div class="mask-wrap"></div>
+
+<div id="container">
+	
+	
+		<div id="content">
+			<div class="con_tit">
+				<h2>소개</h2>				
+			</div>
+
+			<div class="conts">
+
+
+				<div class="u-tab01" id="about-tab">
+					<ul class="con06">
+						<li class="active"><a href="#vtab1"><span>인적항목</span></a></li>
+						<li><a href="#vtab2"><span>소득항목</span></a></li>
+						<li><a href="#vtab3"><span>부채항목</span></a></li>
+						<li><a href="#vtab4"><span>담보항목</span></a></li>
+						<li><a href="#vtab5"><span>대출항목</span></a></li>
+						<li><a href="#vtab6"><span>유의사항</span></a></li>
+					</ul>
+				</div>
+
+				<script>
+					$(document).ready(function(){
+						$("#about-tab").find("a").click(function(event) {
+							event.preventDefault();
+							$(this).parent().addClass("active");
+							$(this).parent().siblings().removeClass("active");
+							var tab = $(this).attr("href");
+							$(".about01-tab").not(tab).hide();
+							$(tab).show();
+						});
+						
+					});
+				</script>
+
+				
+				<div class="about01-tab" id="vtab1">
+					<h3>신청인 국적</h3>
+					<p>신청인 및 배우자는 주민등록표 등본에 기재된 대한민국 국민이어야합니다.<br />
+					단, 배우자가 외국인(외국국적동퐁 등 포함)이라도 국내거소신고 사실을 증빙하는 경우에 한하여 취급 가능합니다.</p>
+
+
+					<h3>신청인 나이</h3>
+					<p>민법상 성년이어야 신청 가능합니다.</p>
+
+
+					<h3>신용정보</h3>
+					<p>한국신용정보원 "신용정보관리규약"에서 정하는 신용정보가 남아있는 경우는 취급불가합니다. <br />
+					부부가 공사 내규에 의한 채무관계자로 규제되고 있는 경우 취급불가합니다</p>
+				</div>
+
+
+				<div class="about01-tab" id="vtab2" style="display:none;">
+					<h3>소득한도</h3>
+					<p>부부합산(미혼인 경우 단독) 소득 최대 7천만원 이하</p>
+
+					<h3>산정방법</h3>
+					<p>최근 1개년 증빙소득으로 산정, 소득발생 기간이 1년 미만인 경우 연환산하여 환산 소득은 100% 인정(단, 사업소득은 연환산 여부 선택 가능)</p>
+
+					<h3>소득증빙</h3>
+					<p>해외에서 발생된 소득은 인정하지 않습니다.</p>
+
+					<h3>소득종류</h3>
+					<p>근로소득, 사업소득, 연금소득, 기타소득, 인정소득* 등이 있으며,<div class="point">인정소득이란 아래의 요건에 해당되는 사유가 있을 경우 국민연금 납입금액 혹은 건강보험료 납입금액으로도 소득 추정 진행 검토가능합니다.</div></p>
+					
+
+				</div>
+
+				<div class="about01-tab" id="vtab3" style="display:none;">
+					<h3>취급가능 기존대출 안내</h3>
+					<p>본 안심전환으로 대환하려는 기존 대출은 아래의 요건을 충족해야합니다.</p>
+					<ol class="list_onum">
+						<li>정책모기지, 고정금리대출 등을 제외한 주택담보대출<br />
+							* 정책모기지 : 보금자리론, 적격대출, 내집마련 디딤돌 대출 등 주택도시기금 대출<br />
+							* 고정금리 대출 : 대출실행일로부터 만기까지 금리가 완전히 고정된 만기 5년 이상의 대출
+							<div class="point ml15">금융감독원 현행 「고정금리, 비거치식 분할상환 대출 인정기준」의 '1. 가. 고정금리대출' 준용</div>
+						     * 기타 : 한도대출, 기업대출, 대부업
+						</li>
+						<li>2022.8.00일까지 실행된 대출</li>
+					</ol>
+
+
+					<h3>금융기관별 차이 안내</h3>
+					<p>보유하신 주택담보대출 중 가장 오래된 대출이 국민, 기업, 농협, 신한, 우리, 하나은행 중 하나일 경우 해당 금융기관에서 신청해주시기 바랍니다.<br />이 외 금융기관에서 실행한 경우 공사에서 신청 가능합니다.</p>
+				</div>
+
+
+				<div class="about01-tab" id="vtab4" style="display:none;">
+					<h3>대상 주택 확인</h3>
+					<p>실거주용으로 사용되는 「주택법」 제2조 1호의 공부상 주택이어야합니다.<br />
+						신청인 또는 배우자가 소유자여야합니다.<br />
+						*배우자는 신청일로부터 3개월 내 결혼예정임을 증명한 결혼예정자도 포함
+					</p>
+					
+					<h3>가격평가 방법</h3>
+					<p>주택가격은 국민은행시세 > 한국부동산원시세 > 현실화 적용된 공시가 > 감정평가 순으로 검토하며, 주택가격이 신청일 기준 4억을 초과할 경우 취급 불가합니다.
+						<div class="point">현실화 적용된 공시가는 실제 주택가격을 반영한 공시가를 의미합니다.</div>
+					</p>
+
+					<h3>주택 보유 수</h3>
+					<p>신청인 및 배우자는 신청일 기준으로 본건 외 타 주택을 보유하고 있을 경우 취급 불가합니다.<br />단, 아래의 무주택으로 보는 사유에 해당될 경우 해당 주택은 보유 수에서 제외 검토 가능합니다.</p>
+					
+					<h3>무주택으로 보는 경우</h3>
+					<ol class="list_onum">
+						<li>상속으로 인하여 취득한 주택의 공유지분을 처분한 경우</li>
+						<li>「국토의 계획 및 이용에 관한 법률」에 따른 도시 지역이 아닌 지역 또는 면의 행정구역 (수도권은 제외한다)에 건축되어 있는 주택으로서 다음의 어느 
+							 하나에 해당하는 주택의 소유자가 당해 주택건설지역에 거주(상속으로 주택을 취득한 경우에는 피상속인이 거주한 것을 상속인이 거주한 것으로 본다) 
+							 하다가 다른 지역으로 이주한 경우<br />
+							 (1) 사용승인 후 20년이상 경과된 단독주택<br />
+							 (2) 85m 이하의 단독주택<br />
+							 (3) 소유자의 「가족관계의 등록에 관한 법률」에 따른 최초 등록기준지에 건축되어 있는 주택으로서 직계존속 또는 배우자로부터 상속 등에 의하여 이전 
+							 받은 단독주택</li>
+						<li>개인주택 사업자가 분양을 목적으로 주택을 건설하여 이를 분양 완료하였거나 그 지분을 처분한 경우</li>
+						<li>세무서에 사업자로 등록한 개인사업자가 그 소속 근로자의 숙소로 사용하기 위하여 주택을 건설하여 소유하고 있거나 정부시책의 일환으로 근로자에게 
+							 공급할 목적으로 사업계획승인을 얻어 건설한 주택을 공급받아 소유하고 있는 경우</li>
+						<li>20m이하의 주택을 소유하고 있는 경우. 다만, 2호 또는 2세대이상의 주택을 소유한 자는 제외한다.</li>
+						<li>건물등기부 또는 건축물대장등의 공부상 주택으로 등재되어 있으나 주택이 낡아 사람이 살지 아니하는 폐가이거나 주택이 멸실되었거나 주택이 아닌 다른 
+							 용도로 사용되고 있는 경우 실제 사용하고 있는 용도로 공부를 정리한 경우</li>
+						<li>무허가건물을 소유하고 있는 경우</li>
+						<li>문화재로 지정된 주택</li>
+					</ol>
+				</div>
+
+
+				<div class="about01-tab" id="vtab5" style="display:none;">
+				
+					<h3>대출한도</h3>
+					<p>기존 대출의 잔액내 최대 2.5억원(100만원 단위 절상)까지 취급 가능합니다.<br />단, LTV 70% 및 DTI 60%를 초과할 수 없습니다.</p>
+
+					<h3>대출 만기</h3>
+					<p>대출 만기는 10년, 15년, 20년, 30년 중 선택 가능하며 만기가 길어질 수록 DTI는 낮아집니다.</p>
+
+					<h3>상환 방식</h3>
+					<p>상환 방식은 원금균등, 원리금균등 방식이 있습니다.</p>
+
+				</div>
+
+
+				<div class="about01-tab" id="vtab6" style="display:none;">
+					
+					<h3>소득공제유의 안내</h3>
+					<p>기존 대출 실행금액보다 더 많은 금액으로 대출 진행시 소득 공제 대상에서 제외될 수 있습니다.<br />
+						보다 자세한 사항은 가까운 세무서 혹은 홈텍스로 문의해주시기 바랍니다.</p>
+
+					<h3>서류 유효기간 안내</h3>
+					<p>서류는 신청일로부터 1개월 내 발급된 자료만 인정 가능합니다.</p>
+
+					<div class="point red">현실화 적용된 공시가는 실제 주택가격을 반영한 공시가를 의미합니다.</div>
+				</div>
+
+
+
+				
+			</div>
+		</div>
+	
+</div>
+<footer>
+	 <div id="foot">
+		
+		<div class="copy_info">
+			<div class="addtel"><address>부산시 남구 문현금융로40(문현동) 부산국제금융센터 한국주택금융공사 <span>콜센터 1688-8114</span></address></div>
+			<p class="copyright">2022 KOREA HOUSING FINANCE CORPORATION. ALL Rights Reserced.</p>
+		</div>		
+	 </div>
+</footer>
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".gnb-wrap .gnb").mouseover(function() {
+			$('.gnb-wrap').addClass('active');
+		});
+		$(".gnb-wrap .gnb").mouseout(function() {
+			$('.gnb-wrap').removeClass('active');
+		});
+
+	});
+</script>
+
+
