@@ -10,7 +10,7 @@ html {
 }
 body {
   background-color: #fbfbfd;
-  font-family: '나눔고딕',NanumGothic,'돋움',Dotum,Helvetica,sans-serif;
+  font-family: 'notoKrM',sans-serif,'나눔고딕',NanumGothic,'돋움',Dotum,Helvetica,sans-serif;
 }
 .btn_login_wrap {
   margin:0;
@@ -161,6 +161,7 @@ body {
     height: 36px;
     width: 90px;
     border: 1px solid #333;
+    border-radius: 1px;
     line-height: 36px;
     text-align: center;
     font-weight:bold;
@@ -172,12 +173,13 @@ body {
 }
 .select input[type=radio]:checked+label{
     border: 1px solid #B40F1F;
+    border-radius: 1px;
     background-color: #B40F1F;
     color: #fff;
 }
 
 .textarea {
-    font-family: notosanskr,Malgun Gothic,맑은 고딕,Dotum,돋움,sans-serif;
+    font-family: 'notoKrR',sans-serif,notosanskr,Malgun Gothic,맑은 고딕,Dotum,돋움,sans-serif;
     font-size:16px;
 }
 
@@ -221,7 +223,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   $('#button1').hide();
   $('#button2').hide();
   returnValue.rsltPrc = 0;
-  $('#div1').append("<br>" + navigator.userAgent);
   
   fetchCitySet();
   fetchSgguMap();
@@ -482,8 +483,10 @@ function showBldgNm() {
   $('[id^=board1234]').hide();
   $('[id^=board1234]').empty();
   $('[id^=board2A]').hide();
-	$('#board2A1').show();
+  $('#board2A1').show();
   $('#button1').show();
+  $('#button2').hide();
+  returnValue.rsltPrc = 0;
   board2A1.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 }
 
@@ -492,6 +495,8 @@ function showStnm() {
   $('[id^=board2A]').hide();
 	$('#board2A2').show();
   $('#button1').show();
+  $('#button2').hide();
+  returnValue.rsltPrc = 0;
 }
 
 function showLtno() {
@@ -1351,10 +1356,6 @@ function getRadioButtonValue(varName) {
 </div>
 
 <div id="div1" class="flex-header">
-이 웹페이지는 프로토타입입니다.
-<br><br><a href="https://github.com/dhkim9549">
-github.com/dhkim9549
-</a>
 </div>
 
 </body></html>
