@@ -108,15 +108,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   $('#agree_2').click(function() {
-		alert("'예'인 경우에만 신청 가능합니다.");
+		alert("신청인은 대한민국 국민이며, 등본 상 거주지가 확인되어야 합니다.");
 		agree_2.checked = false;
   });
   $('#agree_4').click(function() {
-		alert("'예'인 경우에만 신청 가능합니다.");
+		alert("배우자가 대한민국 국민이 아닌 경우, 국내 거소함이 확인되어야 합니다.");
 		agree_4.checked = false;
   });
   $('#agree_6').click(function() {
-		alert("'예'인 경우에만 신청 가능합니다.");
+		alert("소득 7천만원 이하인 경우 신청 가능합니다.");
 		agree_6.checked = false;
   });
   $('#agree_7').click(function() {
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		agree_10.checked = false;
   });
   $('#agree_11').click(function() {
-		alert("'아니오'인 경우에만 신청 가능합니다.");
+		alert("담보물, 본건 외 타 주택을 소유하고 있는 경우 신청 불가합니다.");
 		agree_11.checked = false;
   });
   $('#agree_21').click(function() {
@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					<div class="item">상환 부채 정보</div>
 					<div class="question"> 
 						<div class="question1">안심전환대출을 통해 상환하시려는 대출이 고정금리*가 아닌 변동금리 대출입니까?
-							<p class="font16 c_green mt8">※ 5년 주기 변동금리 대출 혹은 고정금리 대출</p>
+							<p class="font16 c_green mt8">※ 고정금리 대출</p>
 						</div>					
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio6" id="agree_9" value="Y" required=""> <label for="agree_9"><span></span>예</label></span>
@@ -456,7 +456,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 										<input type="text" id="hsPrc" name="hsPrc" maxlength="20" size="20" class="textinput_prc" style="text-align:end;font-size:16px;">
 										원
 									</div>
-									<p class="type_txt">시세(또는 예상 주택가격)과 매매가액 중 낮은 금액이 적용됩니다. </p>
 								</div>
 
 
