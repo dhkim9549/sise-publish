@@ -864,7 +864,7 @@ function getAptSise() {
 function showKbSise() {
   if(kbArr.length > 0) {
     $('#board12345H').html("국민은행 시세");
-    showRslt();
+    $('#board12345H').append("<br><br>주택형을 선택하세요.");
   } else {
     $('#board12345H').html("국민은행 시세가 없습니다.");
   }
@@ -933,7 +933,7 @@ function showKabSise() {
   
   if(kabArr.length > 0) {
     $('#board123456H').html("한국부동산원 시세");
-    showRslt();
+    $('#board123456H').append("<br><br>주택형을 선택하세요.");
   } else {
     $('#board123456H').html("한국부동산원 시세가 없습니다.");
   }
@@ -1020,8 +1020,9 @@ function showOlprDSise(siseMapDstgKeyVal, olprDArr) {
   
   if(olprDArr.length > 0) {
     $('#board1234567H').html("공동주택 공시가격");
-    $('#board12345678H').show();
-    $('#board12345678H').html("동을 선택하세요.");
+    if(olprDArr.length > 1) {
+      $('#board1234567H').append("<br><br>동을 선택하세요.");
+    }
   } else {
     $('#board1234567H').html("공동주택 공시가격이 없습니다.");
   }
@@ -1081,10 +1082,11 @@ function showOlprSise(olprArr) {
   $('#board1234567').empty();
   
   if(olprArr.length > 0) {
-    $('#board1234567H').html("공동주택 공시가격");
+    $('#board1234567G').show();
+    $('#board1234567G').html("호를 선택하세요.");
     showRslt();
   } else {
-    $('#board1234567H').html("공동주택 공시가격이 없습니다.");
+    $('#board1234567G').html("공동주택 공시가격이 없습니다. (오류)");
   }
 
   olprArr.sort(function (a, b) {
@@ -1124,6 +1126,8 @@ function showOlprSise(olprArr) {
       showRslt3(element.ofntPrc, 140);
     });
   }
+
+  board1234567G.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 }
 
 function showRslt() {
@@ -1331,6 +1335,8 @@ function getRadioButtonValue(varName) {
 <div id="board1234567H" class="flex-header">
 </div>
 <div id="board1234567A" class="flex-container">
+</div>
+<div id="board1234567G" class="flex-header">
 </div>
 <div id="board1234567" class="flex-container">
 </div>
