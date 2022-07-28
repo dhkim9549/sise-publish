@@ -805,12 +805,8 @@ async function getSiseMap(stnmUnonCd) {
   }
   
   if(kbArr.length == 0 && kabArr.length == 0 && mapArr.length > 0) {
-    $('[id^=board1234567]').show();
-    $('#board1234567H').html("공동주택 공시가격을 조회합니다.");
     getOlprSise();
   }
-
-  board12345H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 let kbArr = [];
@@ -865,6 +861,8 @@ function showKbSise() {
   if(kbArr.length > 0) {
     $('#board12345H').html("국민은행 시세");
     $('#board12345H').append("<br><br>주택형을 선택하세요.");
+    board12345H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+
   } else {
     $('#board12345H').html("국민은행 시세가 없습니다.");
   }
@@ -934,6 +932,7 @@ function showKabSise() {
   if(kabArr.length > 0) {
     $('#board123456H').html("한국부동산원 시세");
     $('#board123456H').append("<br><br>주택형을 선택하세요.");
+    board123456H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   } else {
     $('#board123456H').html("한국부동산원 시세가 없습니다.");
   }
@@ -983,6 +982,8 @@ let olprDEArr = [];
 
 async function getOlprSise() {
 
+  $('[id^=board1234567]').show();
+	
   olprDEArr = [];
   
   for(let i = 0; i < mapArr.length; i++) {
@@ -1022,6 +1023,7 @@ function showOlprDSise(siseMapDstgKeyVal, olprDArr) {
     $('#board1234567H').html("공동주택 공시가격");
     if(olprDArr.length > 1) {
       $('#board1234567H').append("<br><br>동을 선택하세요.");
+      board1234567H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
     }
   } else {
     $('#board1234567H').html("공동주택 공시가격이 없습니다.");
