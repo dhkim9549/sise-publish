@@ -370,7 +370,7 @@ function getCitySet() {
     e.append(e1);
   });
 
-  board1.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  board1.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 let siseDvcdVal;
@@ -433,7 +433,7 @@ function getSgguSet(city) {
     }
   });
 
-  board12.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  board12.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 let emdSet;
@@ -474,7 +474,7 @@ function getEmdSet(sggu) {
     e.append(e1);
   });
 
-  board123.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  board123.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 let lwdgCd;
@@ -487,7 +487,7 @@ function showBldgNm() {
   $('#button1').show();
   $('#button2').hide();
   returnValue.rsltPrc = 0;
-  board2A1.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  board2A1.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 function showStnm() {
@@ -505,7 +505,7 @@ function showLtno() {
   $('[id^=board2A]').hide();
 	$('#board2A3').show();
   $('#button1').show();
-  board2A3.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  board2A3.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 function getEhPr() {
@@ -613,7 +613,7 @@ function getEhPr() {
           showRslt();
         }
 
-	      board1234.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+	      board1234.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
     });
 }
 
@@ -725,7 +725,7 @@ function getAddrList() {
           board1234H.innerHTML = "건물을 선택하세요.";
         }
 
-	      board1234.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+	      board1234.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
     });
 }
 
@@ -810,7 +810,7 @@ async function getSiseMap(stnmUnonCd) {
     getOlprSise();
   }
 
-  board12345H.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  board12345H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 let kbArr = [];
@@ -1084,7 +1084,6 @@ function showOlprSise(olprArr) {
   if(olprArr.length > 0) {
     $('#board1234567G').show();
     $('#board1234567G').html("호를 선택하세요.");
-    showRslt();
   } else {
     $('#board1234567G').html("공동주택 공시가격이 없습니다. (오류)");
   }
@@ -1127,12 +1126,12 @@ function showOlprSise(olprArr) {
     });
   }
 
-  board1234567G.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  board1234567G.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 function showRslt() {
   $('#board12345678H').show();
-  $('#board12345678H').html("조회가 완료되었습니다. 주택(형)을 선택하세요.");
+  $('#board12345678H').html("조회가 완료되었습니다. 주택을 선택하세요.");
 }
 
 function showRslt2(prc, prc2) {
@@ -1181,7 +1180,7 @@ function showRslt2(prc, prc2) {
     });
   }
   
-  board123456789.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  board123456789.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 function showRslt3(prc, realRat) {
@@ -1212,7 +1211,7 @@ function showRslt3(prc, realRat) {
   board123456789A.style.backgroundColor = "#ffe812";
   returnValue.rsltPrc = rsltPrc;
   
-  board123456789A.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  board123456789A.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 
 function getRadioButtonValue(varName) {
