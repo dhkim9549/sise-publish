@@ -88,11 +88,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			$('#agree_13').focus();
 			return;
 		}
-    if(agree_16.checked == false) {
-			alert("취급 요건 대상자를 입력하세요.");
-			$('#agree_16').focus();
-			return;
-		}
 		let hsPrcVal = Number(hsPrc.value.replaceAll(',', ''));
 		if(hsPrcVal > 0) {
 			if(hsPrcVal > 400000000) {
@@ -135,9 +130,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		alert("해당 금융기관으로 신청 부탁드립니다.");
 		agree_21.checked = false;
   });
-  $('#agree_17').click(function() {
-		alert("'예'인 경우에만 신청 가능합니다.");
-		agree_17.checked = false;
+  $('#agree_15').click(function() {
+		alert("주택 소유자 구성이 본인 혹은 배우자가 아닌 제3자인 경우 안심전환대출 취급 불가합니다.");
+		agree_15.checked = false;
   });
 });
 
@@ -398,9 +393,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							<p class="font16 c_red mt8">※ 위 해당사항이 없는 경우 신청 불가</p>
 						</div>					
 						<div class="agree_check">
-							<span class="check_box"><input type="radio" name="radio8" id="agree_13" value="Y" required=""> <label for="agree_13"><span></span>본인</label></span>
-							<span class="check_box"><input type="radio" name="radio8" id="agree_14" value="N"> <label for="agree_14"><span></span>배우자</label></span>
-							<span class="check_box"><input type="radio" name="radio8" id="agree_15" value="N"> <label for="agree_15"><span></span>부부공동명의</label></span>
+							<span class="check_box"><input type="radio" name="radio8" id="agree_13" value="Y" required=""> <label for="agree_13"><span></span>본인 또는 배우자</label></span>
+							<span class="check_box"><input type="radio" name="radio8" id="agree_14" value="N"> <label for="agree_14"><span></span>부부공동</label></span>
+							<span class="check_box"><input type="radio" name="radio8" id="agree_15" value="N"> <label for="agree_15"><span></span>그 외 소유</label></span>
 						</div>	
 					</div>
 									
@@ -435,21 +430,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				</div>
 
 
-				<!-- 10번째 항목 -->
-				<div class="check_list">
-					
-					<div class="item">취급 요건 대상자</div>
-					<div class="question"> 
-						<div class="question1">사전 안내 페이지 내용의 취급 요건에 부합되지 않는 신청자는 절차 진행 과정에서 승인되지<br /> 아니 할 수 있습니다.
-							<p class="font16 c_red mt8">※ 실제 대출 가능 여부는 심사 시 확인 가능합니다.</p>
-						</div>
-						<div class="agree_check">							
-							<span class="check_box"><input type="radio" name="radio10" id="agree_16" value="N"> <label for="agree_16"><span></span>예</label></span>
-							<span class="check_box"><input type="radio" name="radio10" id="agree_17" value="N"> <label for="agree_17"><span></span>아니요</label></span>
-						</div>	
-					</div>
-									
-				</div>
+				<p class="font16 c_red mt8">※ 실제 대출 가능 여부는 심사 시 확인 가능합니다.</p>
 
 				<div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
 					<button class="button_result" id="rsltReqButton">
