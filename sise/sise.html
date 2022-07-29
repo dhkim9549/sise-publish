@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>주택 시세 조회</title>
 
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
 <style>
 html {
   font-size: 16px;
 }
 body {
   background-color: #fbfbfd;
-  font-family: NanumGothic,NanumGothicWebFont,"돋움",Dotum,sans-serif;
+  font-family: NanumGothicBold,NanumGothicWebFont,"돋움",Dotum,sans-serif;
   color: #222;
 }
 .btn_login_wrap {
@@ -64,7 +65,7 @@ body {
 .flex-header > div {
   margin-bottom: 0.7em;
   font-size: 1.5em;
-  font-weight: bold;
+  font-family: NanumGothicExtraBold;
 }
 
 .flex_input {
@@ -142,13 +143,16 @@ body {
   font-size: 1.4em;
 }
 .flex-container > div > div {
-  font-size: 0.9em;
+  font-size: 0.95em;
   margin-top: 0.4em;
   margin-bottom: 0.4em;
 }
 .cont {
   max-width: 100%;
-  line-height: 1.4em
+  line-height: 1.4em;
+  font-family: NanumGothic;
+  font-size: 13px;
+  letter-spacing: -0.5px;
 }
 
 .select {
@@ -182,6 +186,12 @@ body {
 
 .textarea {
     font-size:16px;
+}
+
+.bold-header {
+  font-family: NanumGothicExtraBold;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 </style>
@@ -610,7 +620,7 @@ function getEhPr() {
         if(items.length == 0) {
           board1234H.innerHTML = "조회된 개별주택이 없습니다.";
         } else {
-          $('#board1234H').html("<span style='font-weight: bold;'>개별주택 공시가격</span>");
+          $('#board1234H').html("<span class='bold-header'>개별주택 공시가격</span>");
           showRslt();
         }
 
@@ -860,7 +870,7 @@ function getAptSise() {
 
 function showKbSise() {
   if(kbArr.length > 0) {
-    $('#board12345H').html("<span style='font-weight: bold;'>국민은행 시세</span>");
+    $('#board12345H').html("<span class='bold-header'>국민은행 시세</span>");
     $('#board12345H').append("<br><br>주택형을 선택하세요.");
     board12345H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 
@@ -931,7 +941,7 @@ function showKabSise() {
   $('#board123456').show();
   
   if(kabArr.length > 0) {
-    $('#board123456H').html("<span style='font-weight: bold;'>한국부동산원 시세</span>");
+    $('#board123456H').html("<span class='bold-header'>한국부동산원 시세</span>");
     $('#board123456H').append("<br><br>주택형을 선택하세요.");
     board123456H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   } else {
@@ -1021,7 +1031,7 @@ function showOlprDSise(siseMapDstgKeyVal, olprDArr) {
   $('#button2').hide();
   
   if(olprDArr.length > 0) {
-    $('#board1234567H').html("<span style='font-weight: bold;'>공동주택 공시가격</span>");
+    $('#board1234567H').html("<span class='bold-header'>공동주택 공시가격</span>");
     if(olprDArr.length > 1) {
       $('#board1234567H').append("<br><br>동을 선택하세요.");
       board1234567H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
@@ -1235,7 +1245,7 @@ function getRadioButtonValue(varName) {
 <body id="body1">
 
 <div id="board0" class="flex-header">
-    <div>주택 시세 조회</div>
+    <div><span style="font-family:'NanumGothicExtraBold';font-weight:bold;">주택 시세 조회</span></div>
 </div>
 
 <div class="flex_input" id="input_area">
