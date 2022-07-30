@@ -39,3 +39,14 @@
 		 url(../font/notokr-bold.woff2) format('woff2'),
 		 url(../font/notokr-bold.woff) format('woff');
 }
+
+
+@font-face {
+	font-family: 'GangwonEduPower';
+	font-style: normal;
+	font-weight: 700;
+	src: local('GangwonEduPower'), local('GangwonEduPower'), url(../GangwonEduPower.eot);
+	src: url(../font/GangwonEduPower.eot?#iefix) format('embedded-opentype'),
+		 url(../font/GangwonEduPower.woff2) format('woff2'),
+		 url(../font/GangwonEduPower.woff) format('woff');
+}

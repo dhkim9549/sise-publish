@@ -1,7 +1,5 @@
 
 
-
-
 .check_list{ display: flex;  align-items: center; background:#f9f9f9; margin-bottom:15px; padding:35px 0px; font-size:20px; font-family: 'NotoKrM';}
 .check_list:first-child{border-top:2px solid #000;}
 .check_list .item{color:#1c33a9; width:18%; text-align: center; padding:0 26px; box-sizing:border-box; letter-spacing: -1.5px;}
@@ -63,6 +61,8 @@
 		.u-tab01 li{width:calc(50% - 4px) !important; margin-bottom:5px;}
 		.u-tab01 li.active a{}
 }
+
+.box{border:1px solid #ddd; background:#fafafa; padding:30px; margin:10px 0 10px 25px; font-size:18px; }
 
 
 ul[class^="list_ul"] li, ol[class^="list_num"] li {line-height:24px; position: relative; }
@@ -161,17 +161,18 @@ table.month tr td ul.info li span.imposs {background-color:#666666;}
 .banner{position: relative; margin-left: -30px;}
 .banner:after{content:''; display:block; clear: both;}
 .banner li{float:left; width:33.3%; text-align:center; padding-left:30px;}
-.banner li a{border:1px solid #ddd; margin-bottom:30px; display:block;}
+.banner li a{border:1px solid #ddd; margin-bottom:30px; display:block; padding:20px 0; }
 
 
-.con_btn{margin-left:25px; padding:20px 0;}
 
-.link{background:#ebf2f6; border-radius:50px; font-size:18px; padding:8px 20px; vertical-align: middle; margin-right:10px;}
+.con_btn{margin-left:25px; padding:20px 0; }
+
+.link{background:#ebf2f6; border-radius:50px; font-size:18px; padding:8px 20px; vertical-align: middle; margin-right:10px; display: inline-block;  margin-bottom:10px;}
 .link span{width:16px; height:17px; background:url(../img/link.png) no-repeat 0 0; margin-left:15px; display:inline-block;}
 
 
 
-.modal{display:none; position:fixed; top:50%; left:50%; margin:-150px 0 0 -238px; width:476px; height:303px; background:#fff; z-index:9999999;}
+.modal{display:none; position:fixed; top:40%; left:50%; transform: translateX(-50%);  width:476px; height:303px; background:#fff; z-index:9999999;}
 .modal .modal_top{background:#0579cc; text-align: right;}
 .modal .modal_bottom{text-align: center; padding-top:76px; position: relative; min-height:243px; }
 .modal .modal_bottom .btn_close{position: absolute;bottom: 30px;left: 50%; margin-left:-45px; color:#fff; padding:10px 0; background:#01407c; font-size:16px; display:block; margin-top:50px; width:90px;}
@@ -189,7 +190,15 @@ table.month tr td ul.info li span.imposs {background-color:#666666;}
     .check_list .question1{margin-bottom:8px;}
 	.check_list .question1 br{display:none;}
 
-	}
+}
+
+
+@media screen and (max-width:768px){
+	.banner{position: relative; margin-left: -15px;}
+	.banner li{float:left; width:50%; text-align:center; padding-left:15px;}
+	.banner li a{margin-bottom:15px; padding:10px 0; }
+}
+
 
 
 @media screen and (max-width:720px){
@@ -198,8 +207,10 @@ table.month tr td ul.info li span.imposs {background-color:#666666;}
 	.check_list .question_sub dd{width:100%;}
 	.check_list .question_sub dt{width:100%;}
 
-	.modal{left: 2%; width: 90%;}
+	.cal_controll span{margin:0 10px;}
+
+	.modal{width: 90%; margin:0px;}
 	.btn_type{width: calc(50% - 4px); margin-bottom:4px;}
 
-
 }
+

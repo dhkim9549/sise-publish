@@ -35,6 +35,9 @@ nav{padding: 0 0% 0 35%;}
 .conts{font-size:20px; }
 .conts h3, .conts h4, .conts h5 {position: relative; text-align: left; margin-bottom:5px;}
 .conts h3 {font-size:24px; padding-left:25px; margin:60px 0 20px 0px; color: #333; font-family: 'NotoKrM'; letter-spacing:-0.1em;}
+.conts h4 {font-size:24px; margin:0px 0 20px 0px; color: #0055a2; font-family: 'NotoKrM'; letter-spacing:-0.1em;}
+
+
 .conts h3:before {content: ''; position: absolute; left: 0; top:7px; width:15px; height:15px; background:url('../img/bul_h3.png') no-repeat 0 0;}
 .conts h3 + p{padding-left:25px;}
 
@@ -43,6 +46,10 @@ nav{padding: 0 0% 0 35%;}
 .conts h3 + ol[class^="list_onum"]{margin-left:25px;}
 
 .conts .con_btn + .point{margin-left:25px;}
+.conts p + div.point{margin-left:25px;}
+
+div.point + ol[class^="list_onum"]{margin-left:47px;}
+div.point + ol li{margin-top: 0px; font-size:17px;}
 
 footer{position: relative; max-width:1360px; margin:0 auto; text-align: center; padding:50px 0; }
 footer #foot{text-align: center;}
@@ -59,7 +66,10 @@ footer #foot .copy_info p.copyright {font-size: 1.6rem; color:#bcbeb7; font-fami
 }
 
 
-
+@media screen and (max-width:1200px){
+	nav{padding: 0 0% 0 48%;}
+	.top_menulist li{padding: 0 10px;}
+}
 
 
 @media screen and (max-width:1024px){
@@ -135,6 +145,18 @@ footer #foot .copy_info p.copyright {font-size: 1.6rem; color:#bcbeb7; font-fami
 
 }
 
+
+
+@media screen and (max-width:480px){
+
+	footer #foot .copy_info span{display:block;}
+}
+
+
 .btn{padding-top:60px;}
-.result{color:#fff; background:#01407c; font-family: 'NotoKrR'; padding:15px 30px;}
-.result span{margin-left:30px; width:22px; height:17px; background:url(../img/btn_arr.png) no-repeat 0 0; display:inline-block; }
+
+.sinchang{color:#fff;  background-image: linear-gradient(to left, #03417b, #5f7449);  font-family: 'NotoKrB'; padding:40px 50px; font-size:28px; line-height: 100px; border-radius:300px;}
+.sinchang span{margin-left:47px; width:16px; height:25px; background:url(../img/btn_arr.png) no-repeat 0 0; display:inline-block; }
+
+.btn_result{color:#fff; background:#01407c; font-family: 'NotoKrB'; padding:30px 50px 30px 62px; font-size:28px; border-radius:300px; line-height: 100px;}
+.btn_result span{margin-left:45px; width:28px; height:30px; background:url(../img/btn_result.png) no-repeat 0 0; display:inline-block; vertical-align: sub; }

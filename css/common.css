@@ -38,6 +38,7 @@ em, dfn, cite, address, i {font-style: normal;}
 
 
 .font16{font-size:16px;}
+.font17{font-size:17px;}
 
 .c_red{color:#d80f23}
 .c_green{color:#066666;}
@@ -53,4 +54,6 @@ em, dfn, cite, address, i {font-style: normal;}
 
 .point{font-size:17px; color:#333; background:url(../img/exclamation.png) no-repeat 0 10px; padding:5px 0 5px 25px;}
 
-.red{color:#d80f23; background:url(../img/exclamation_red.png) no-repeat 0 10px; margin-top:50px;}
+.red{color:#d80f23; background:url(../img/exclamation_red.png) no-repeat 0 10px;}
+
+.clearfix:after{content: ''; display:block; clear: both;}
