@@ -69,6 +69,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		alert_popup.style.display = "none";
 	}
 
+  document.getElementById("brthYr").addEventListener('keydown', (e) => {
+    if(e.key == "Enter") {
+      document.getElementById("inqReqDyButton").click(); 
+    }
+  });
   $('#inqReqDyButton').click(function() {
 		let msg = "신청가능일: 0000년 0월 0일";
 		let hsPrcVal = Number(hsPrc.value.replaceAll(',', ''));
@@ -107,7 +112,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		    msg = "2022년 10월 11일 (화)";
 			}
 		}
-		$('#reqDy').html("<br>신청가능일: " + msg);
+		$('#reqDy').html("<br>신청가능일: " + msg + "<br>신청방법에 대한 상세한 내용은 신청방법 메뉴에서 확인하세요.");
+		
+		$('#reqDy').append('<br><br><ul class="link clearfix"><li><a href="sub_04.html">신청방법<span></span></a></li></li>');
 	});
 
   $('#rsltReqButton').click(function() {
@@ -170,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 		// popupAlert("안심전환대출 신청이 가능합니다.");
     $('#reqBrthYr').show();
+    reqBrthYr.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
 
   $('[id^=agree]').click(function() {
@@ -312,28 +320,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			
 			<ul class="top_menulist">			
 				<li class="secs"><a href="sub_01.html" class="depth1-1">상품소개</a>
-					<div class="sub-gnb">
+					<!-- div class="sub-gnb">
 						<ul class="depth2">
-							<li><a href="#">인적항목</a></li>
-							<li><a href="#">소득항목</a></li>
-							<li><a href="#">부채항목</a></li>
-							<li><a href="#">담보항목</a></li>
-							<li><a href="#">대출항목</a></li>
-							<li><a href="#">유의사항</a></li>
+							<li><a href="sub_01.html#vtab1">인적항목</a></li>
+							<li><a href="sub_01.html#vtab2">소득항목</a></li>
+							<li><a href="sub_01.html#vtab3">부채항목</a></li>
+							<li><a href="sub_01.html#vtab4">담보항목</a></li>
+							<li><a href="sub_01.html#vtab5">대출항목</a></li>
+							<li><a href="sub_01.html#vtab6">유의사항</a></li>
 						</ul>
-					</div>
+					</div -->
 				</li>  
 				<li class="secs"><a href="sub_04.html" class="depth1-1">신청방법</a>
-					<div class="sub-gnb">
+					<!-- div class="sub-gnb">
 						<ul class="depth2">
 							<li><a href="sub_04.html">취급금융기관안내</a></li>
 							<li><a href="sub_05.html">절차준비</a></li>
 							<li><a href="sub_06.html">신청준비</a></li>
 						</ul>
-					</div>
-				</li>				
-				<li class="secs"><a href="sub_03.html" class="depth1-1">신청자격 사전확인</a></li>				
+					</div -->
+				</li>
+
+				
+				<li class="secs"><a href="sub_03.html" class="depth1-1">신청자격 알아보기</a></li>
 				<li class="secs"><a href="sub_02.html" class="depth1-1">필요서류</a></li>
+				
 			</ul> 
 		</nav>
 	</div>
@@ -346,7 +357,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	
 		<div id="content">
 			<div class="con_tit">
-				<h2>신청자격 사전확인</h2>				
+				<h2>신청자격 알아보기</h2>				
 			</div>
 
 			<div class="conts">
@@ -359,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					
 					<div class="item">국적</div>
 					<div class="question"> 
-						<div class="question1">신청인은 주민등록 등본 상 한국에 거주하고 계십니까?</div>					
+						<div class="question1">신청인은 한국에 거주하고 있는 대한민국 국민입니까?</div>					
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio1" id="agree_1" value="Y" required=""> <label for="agree_1"><span></span>예</label></span>
 							<span class="check_box"><input type="radio" name="radio1" id="agree_2" value="N" > <label for="agree_2"><span></span>아니요</label></span>
@@ -443,7 +454,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					
 					<div class="item">상환 부채 정보</div>
 					<div class="question"> 
-						<div class="question1">안심전환대출을 통해 상환하시려는 대출이 고정금리가 아닌 변동금리 대출입니까?
+						<div class="question1">안심전환대출을 통해 상환하려는 대출이 고정금리가 아닌 변동금리 대출입니까?
 						</div>					
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio6" id="agree_9" value="Y" required=""> <label for="agree_9"><span></span>예</label></span>
@@ -531,7 +542,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				<div class="check_list" id="reqBrthYr" style="display: block;">
 					
 					<div class="question"> 
-						<div class="question1">안심전환대출 신청이 가능합니다. 출생년도를 입력하세요.
+						<div class="question1">안심전환대출 신청이 가능합니다. 신청일정을 확인하려면 출생년도를 입력하세요.
 						</div>					
 					</div>
 

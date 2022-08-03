@@ -57,7 +57,7 @@
 				</li>
 
 				
-				<li class="secs"><a href="sub_03.html" class="depth1-1">신청자격 사전확인</a></li>
+				<li class="secs"><a href="sub_03.html" class="depth1-1">신청자격 알아보기</a></li>
 				<li class="secs"><a href="sub_02.html" class="depth1-1">필요서류</a></li>
 				
 			</ul> 
@@ -80,25 +80,11 @@
 
 				<div class="u-tab01" id="about-tab">
 					<ul class="con03">
-						<li><a href="sub_04.html"><span>취급금융기관안내</span></a></li>
-						<li><a href="sub_05.html"><span>절차안내</span></a></li>
+						<li><a href="sub_04.html"><span>신청기관안내</span></a></li>
+						<li><a href="sub_05.html"><span>신청일정안내</span></a></li>
 						<li class="active"><a href="sub_06.html"><span>신청안내</span></a></li>			
 					</ul>
 				</div>
-
-				<script>
-					$(document).ready(function(){
-						$("#about-tab").find("a").click(function(event) {
-							event.preventDefault();
-							$(this).parent().addClass("active");
-							$(this).parent().siblings().removeClass("active");
-							var tab = $(this).attr("href");
-							$(".about01-tab").not(tab).hide();
-							$(tab).show();
-						});
-						
-					});
-				</script>
 
 
 				<h3>필수 설치</h3>
