@@ -896,6 +896,11 @@ function showKbSise() {
     e01.innerHTML = "(전용면적) " + element.excvArea + " m²";
     e.append(e01);
 
+    let e02 = document.createElement('div');
+    e02.className = "cont";
+    e02.innerHTML = "(타입) " + element.pyngArea + element.ptyTypeNm;
+    e.append(e02);
+
     let e0 = document.createElement('div');
     e0.className = "cont";
     e0.innerHTML = "(매매상한가) " + formatPrc(element.trdTopPrc);
@@ -966,6 +971,11 @@ function showKabSise() {
     e01.className = "cont";
     e01.innerHTML = "(전용면적) " + element.excvArea + " m²";
     e.append(e01);
+
+    let e02 = document.createElement('div');
+    e02.className = "cont";
+    e02.innerHTML = "(타입) " + element.pyngArea + element.ptyTypeNm;
+    e.append(e02);
 
     let e1a = document.createElement('div');
     e1a.className = "cont";

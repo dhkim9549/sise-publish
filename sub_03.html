@@ -45,46 +45,107 @@ function getReturnValue(returnValue) {
   $('#hsPrc').number(true, 0);
 }
 
+// When the user clicks on the button, open the modal
+function popupAlert(msg) {
+  $('#alert_popup_msg').html(msg);
+	alert_popup.style.display = "block";
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
   $('#hsPrc').number(true, 0);
+	$('#brthYr').keyup(function () {
+    this.value = this.value.replace(/[^0-9\. ]/g,'');
+  });
 	
   $('#openNewWindowButton').click(function() {
     openNewWindow('sise/sise.html');
   });
 
+  $('#bank_list').hide();
+  $('#reqBrthYr').hide();
+
+	// Close the modal
+	alert_popup_close.onclick = function() {
+		alert_popup.style.display = "none";
+	}
+
+  $('#inqReqDyButton').click(function() {
+		let msg = "신청가능일: 0000년 0월 0일";
+		let hsPrcVal = Number(hsPrc.value.replaceAll(',', ''));
+		let brthYrVal = Number(brthYr.value) % 10;
+		if(hsPrcVal <= 300000000) {
+		  if(brthYrVal == 2 || brthYrVal == 7) {
+		    msg = "2022년 9월 13일 (화), 2022년 9월 20일 (화)";
+			}
+		  if(brthYrVal == 3 || brthYrVal == 8) {
+		    msg = "2022년 9월 14일 (수), 2022년 9월 21일 (수)";
+			}
+		  if(brthYrVal == 4 || brthYrVal == 9) {
+		    msg = "2022년 9월 15일 (목), 2022년 9월 22일 (목)";
+			}
+		  if(brthYrVal == 5 || brthYrVal == 0) {
+		    msg = "2022년 9월 16일 (금), 2022년 9월 23일 (금)";
+			}
+		  if(brthYrVal == 1 || brthYrVal == 6) {
+		    msg = "2022년 9월 19일 (월), 2022년 9월 26일 (월)";
+			}
+		}
+		if(hsPrcVal > 300000000 && hsPrcVal <= 400000000) {
+		  if(brthYrVal == 2 || brthYrVal == 7) {
+		    msg = "2022년 10월 4일 (화)";
+			}
+		  if(brthYrVal == 3 || brthYrVal == 8) {
+		    msg = "2022년 10월 5일 (수)";
+			}
+		  if(brthYrVal == 4 || brthYrVal == 9) {
+		    msg = "2022년 10월 6일 (목)";
+			}
+		  if(brthYrVal == 5 || brthYrVal == 0) {
+		    msg = "2022년 10월 7일 (금)";
+			}
+		  if(brthYrVal == 1 || brthYrVal == 6) {
+		    msg = "2022년 10월 11일 (화)";
+			}
+		}
+		$('#reqDy').html("<br>신청가능일: " + msg);
+	});
+
   $('#rsltReqButton').click(function() {
+	  $('#reqBrthYr').hide();
+	  brthYr.value = "";
+		$('#reqDy').html("");
     if(agree_1.checked == false) {
-			alert("국적을 입력하세요.");
+			popupAlert("국적을 입력하세요.");
 			$('#agree_1').focus();
 			return;
 		}
     if(agree_3.checked == false) {
-			alert("배우자 국내 거주 여부를 입력하세요.");
+			popupAlert("배우자 국내 거주 여부를 입력하세요.");
 			$('#agree_3').focus();
 			return;
 		}
     if(agree_5.checked == false) {
-			alert("부부합산 연소득을 입력하세요.");
+			popupAlert("부부합산 연소득을 입력하세요.");
 			$('#agree_5').focus();
 			return;
 		}
     if(agree_8.checked == false) {
-			alert("상환 부채 정보(기업대출 혹은 대부업 여부)를 입력하세요.");
+			popupAlert("상환 부채 정보(기업대출 혹은 대부업 여부)를 입력하세요.");
 			$('#agree_8').focus();
 			return;
 		}
     if(agree_22.checked == false) {
-			alert("상환 부채 정보(6개 은행 대출 여부)를 입력하세요.");
+			popupAlert("상환 부채 정보(6개 은행 대출 여부)를 입력하세요.");
 			$('#agree_22').focus();
 			return;
 		}
     if(agree_9.checked == false) {
-			alert("상환 부채 정보(변동금리 대출 여부)를 입력하세요.");
+			popupAlert("상환 부채 정보(변동금리 대출 여부)를 입력하세요.");
 			$('#agree_9').focus();
 			return;
 		}
     if(agree_12.checked == false) {
-			alert("주택보유 여부를 입력하세요.");
+			popupAlert("주택보유 여부를 입력하세요.");
 			$('#agree_12').focus();
 			return;
 		}
@@ -92,54 +153,63 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				&& agree_14.checked == false
 				&& agree_15.checked == false
 			) {
-			alert("주택 명의자(담보 제공자)를 입력하세요.");
+			popupAlert("주택 명의자(담보 제공자)를 입력하세요.");
 			$('#agree_13').focus();
 			return;
 		}
 		let hsPrcVal = Number(hsPrc.value.replaceAll(',', ''));
 		if(hsPrcVal > 0) {
 			if(hsPrcVal > 400000000) {
-				alert("예상 담보평가액 4억원 이하만 신청 가능합니다.");
+				popupAlert("주택가격 4억 원 초과 건에 대해서는 신청된 금액이 공급계획 미달 시 추가 접수할 계획이오니 추후 별도 공지사항을 확인하시기 바랍니다.");
 				return;
 			}
 		} else {
-			alert("주택 시세를 입력하세요.");
+			popupAlert("주택 시세를 입력하세요.");
 			$('#hsPrc').focus();
 			return;
 		}
-		alert("안심전환대출 신청이 가능합니다.");
+		// popupAlert("안심전환대출 신청이 가능합니다.");
+    $('#reqBrthYr').show();
+  });
+
+  $('[id^=agree]').click(function() {
+    $('#reqBrthYr').hide();
   });
 
   $('#agree_2').click(function() {
-		alert("신청인은 대한민국 국민이며, 등본 상 거주지가 확인되어야 합니다.");
+		popupAlert("신청인은 대한민국 국민이며, 등본 상 거주지가 확인되어야 합니다.");
 		agree_2.checked = false;
   });
   $('#agree_4').click(function() {
-		alert("배우자가 대한민국 국민이 아닌 경우, 국내 거소함이 확인되어야 합니다.");
+		popupAlert("배우자가 대한민국 국민이 아닌 경우, 국내 거소함이 확인되어야 합니다.");
 		agree_4.checked = false;
   });
   $('#agree_6').click(function() {
-		alert("소득 7천만원 이하인 경우 신청 가능합니다.");
+		popupAlert("소득 7천만원 이하인 경우 신청 가능합니다.");
 		agree_6.checked = false;
   });
   $('#agree_7').click(function() {
-		alert("본 안심전환대출로 기업대출 혹은 대부업대출 상환 불가합니다.");
+		popupAlert("본 안심전환대출로 기업대출 혹은 대부업대출 상환 불가합니다.");
 		agree_7.checked = false;
   });
   $('#agree_10').click(function() {
-		alert("본 안심전환대출 대상은 변동금리 대출을 대상으로 합니다.");
+		popupAlert("본 안심전환대출 대상은 변동금리 대출을 대상으로 합니다.");
 		agree_10.checked = false;
   });
   $('#agree_11').click(function() {
-		alert("담보물, 본건 외 타 주택을 소유하고 있는 경우 신청 불가합니다.");
+		popupAlert("담보물, 본건 외 타 주택을 소유하고 있는 경우 신청 불가합니다.");
 		agree_11.checked = false;
   });
   $('#agree_21').click(function() {
-		alert("해당 금융기관으로 신청 부탁드립니다.");
+		popupAlert("해당 금융기관으로 신청 부탁드립니다.");
 		agree_21.checked = false;
+    $('#bank_list').show();
+  });
+  $('#agree_22').click(function() {
+    $('#bank_list').hide();
   });
   $('#agree_15').click(function() {
-		alert("주택 소유자 구성이 본인 혹은 배우자가 아닌 제3자인 경우 안심전환대출 취급 불가합니다.");
+		popupAlert("주택 소유자 구성이 본인 혹은 배우자가 아닌 제3자인 경우 안심전환대출 취급 불가합니다.");
 		agree_15.checked = false;
   });
 });
@@ -180,6 +250,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     width: 20em;
   }
 }
+
+.textinput_yr{border-radius:1px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;font-size:13px;height:25px;padding:1px 8px;width:6em;}
+.textinput_yr:focus{box-shadow:inset 0 1px 2px rgba(0,0,0,.3);border:1px solid #4d90fe;outline:none}
 
 .button_result {
     color: #fff;
@@ -250,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						</ul>
 					</div>
 				</li>  
-				<li class="secs"><a href="sub_04.html" class="depth1-1">신청하기</a>
+				<li class="secs"><a href="sub_04.html" class="depth1-1">신청방법</a>
 					<div class="sub-gnb">
 						<ul class="depth2">
 							<li><a href="sub_04.html">취급금융기관안내</a></li>
@@ -356,6 +429,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 									
 				</div>
 
+				<ul class="banner" id="bank_list">
+					<li><a href="https://www.kbstar.com/" title="새창" target="_blank"><img src="img/bank_01.gif" alt="" /></a></li></li>
+					<li><a href="https://www.ibk.co.kr" title="새창" target="_blank"><img src="img/bank_02.gif" alt="" /></a></li></li>
+					<li><a href="https://banking.nonghyup.com/" title="새창" target="_blank"><img src="img/bank_03.gif" alt="" /></a></li></li>
+					<li><a href="https://www.shinhan.com" title="새창" target="_blank"><img src="img/bank_04.gif" alt="" /></a></li></li>
+					<li><a href="https://wooribank.com" title="새창" target="_blank"><img src="img/bank_05.gif" alt="" /></a></li></li>
+					<li><a href="https://www.kebhana.com" title="새창" target="_blank"><img src="img/bank_06.gif" alt="" /></a></li></li>
+				</ul>
 
 				<!-- 6번째 항목 -->
 				<div class="check_list">
@@ -437,13 +518,55 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				<p class="font16 c_red mt8">※ 실제 대출 가능 여부는 심사 시 확인 가능합니다.</p>
 
-				<div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
-					<button class="button_result" id="rsltReqButton">
+				<div style="display:flex; flex-direction: row; justify-content: center; align-items: center" >
+					<button class="button_result"  style="margin:25px;" id="rsltReqButton">
 						<span class="btn_text">결과조회</span>
 						<!--
 						<span class="result_span"></span>
 						-->
 					</button>
+				</div>
+
+				<!-- 출생년도 입력 -->
+				<div class="check_list" id="reqBrthYr" style="display: block;">
+					
+					<div class="question"> 
+						<div class="question1">안심전환대출 신청이 가능합니다. 출생년도를 입력하세요.
+						</div>					
+					</div>
+
+					<div class="question_sub" style="margin-top:15px;">
+						<dl>
+							<div style="display:flex;">
+								<div class="preference">
+									<label for="name" class="label_req">출생년도</label>
+									<div>
+										<input type="text" id="brthYr" name="brthYr" maxlength="4" size="4" class="textinput_yr" style="text-align:end;font-size:16px;">
+										년
+									</div>
+								</div>
+								<div style="display:flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 15px">
+									<button class="btn_login" id="inqReqDyButton">
+										<span class="btn_text">신청가능일 조회</span>
+									</button>
+								</div>
+							</div>
+						</dl>
+					</div>									
+
+					<div class="question"> 
+						<div class="question1" id="reqDy">
+						</div>					
+					</div>
+
+				</div>
+				
+				<div class="modal open" id="alert_popup" style="display:none;">
+					<div class="modal_top"><div>알림</div><span class="modal_close"><img src="img/modal_close.png" alt="닫기" /></span></div>
+					<div class="modal_bottom">
+						<p><span class="font_point c_blue" id="alert_popup_msg">입력 값 확인 바랍니다.</span></p>
+						<div class="modal_close btn_close" id="alert_popup_close">닫기</div>
+					</div>
 				</div>
 
 			</div>
