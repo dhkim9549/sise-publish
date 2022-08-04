@@ -95,7 +95,6 @@ function openNewWindow(url) {
   var specs = 'menubar=no,status=no,toolbar=no,top=50,left=100,width=850,height=850';
   if(windowObjectReference == null || windowObjectReference.closed) {
     windowObjectReference = window.open(url, name, specs);
-		
   } else {
     windowObjectReference.focus();
   }
@@ -106,13 +105,11 @@ let gReturnValue = {
 };
 
 window.addEventListener("message", (event) => {
-	if (event.origin !== "https://ansim.hf.go.kr")
-	  return;
-	
-	gReturnValue = event.data;
+  if (event.origin !== "https://ansim.hf.go.kr")
+    return;
+  gReturnValue = event.data;
   hsPrc.value = gReturnValue.rsltPrc;
   $('#hsPrc').number(true, 0);
-	
 }, false);
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -128,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 <body id="body1">
 
 <div id="board0" class="flex-header">
-    <div>주택 시세 조회 팝업 호출 예제</div>
+  <div>주택 시세 조회 팝업 호출 예제</div>
 </div>
 
 <div class="flex_input" id="input_area0">
@@ -143,20 +140,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
   </button>
   <div class="preference">
     <label for="name" class="label_req">예상 담보평가액</label>
-		<div>
+    <div>
       <input type="text" id="hsPrc" name="hsPrc" maxlength="20" size="20" class="textinput_addr" style="text-align: end;">
-		  <span style="font-size:13px;">원</span>
-		</div>
+      <span style="font-size:13px;">원</span>
+    </div>
   </div>
 </div>
 
 <div id="div1" class="flex-header">
 이 웹페이지는 예제입니다.
-<p>
-	<a href="https://github.com/dhkim9549">
-	github.com/dhkim9549
-</p>
-</a>
 </div>
 
 </body></html>
