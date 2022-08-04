@@ -872,7 +872,8 @@ function getAptSise() {
 function showKbSise() {
   if(kbArr.length > 0) {
     $('#board12345H').html("<span class='bold-header'>국민은행 시세</span>");
-    $('#board12345H').append("<br><br>주택형을 선택하세요.");
+    $('#board12345H').append("<span style='margin-top:1em;'>주택형을 선택하세요.</span>");
+
     board12345H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 
   } else {
@@ -948,7 +949,7 @@ function showKabSise() {
   
   if(kabArr.length > 0) {
     $('#board123456H').html("<span class='bold-header'>한국부동산원 시세</span>");
-    $('#board123456H').append("<br><br>주택형을 선택하세요.");
+    $('#board123456H').append("<span style='margin-top:1em;'>주택형을 선택하세요.</span>");
     board123456H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   } else {
     $('#board123456H').html("한국부동산원 시세가 없습니다.");
@@ -1044,7 +1045,8 @@ function showOlprDSise(siseMapDstgKeyVal, olprDArr) {
   if(olprDArr.length > 0) {
     $('#board1234567H').html("<span class='bold-header'>공동주택 공시가격</span>");
     if(olprDArr.length > 1) {
-      $('#board1234567H').append("<br><br>동을 선택하세요.");
+      $('#board1234567H').append("<span style='margin-top:1em;'>동을 선택하세요.</span>");
+
       board1234567H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
     }
   } else {
