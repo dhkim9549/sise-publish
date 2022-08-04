@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주택 시세 조회 팝업 호출 예제</title>
+
+<style>
+html {
+  font-size: 16px;
+}
+body {
+  background-color: #fbfbfd;
+  font-family: '나눔고딕',NanumGothic,'돋움',Dotum,Helvetica,sans-serif;
+}
+.btn_login_wrap {margin:0;}
+.btn_login {
+  display:block;width:150px;padding:13px 0 13px;
+  border:solid 1px rgba(0,0,0,.15);background-color:#B40F1F;box-sizing:border-box;padding:13px 0;border-radius:5.4px
+}
+.btn_text {
+  font-size:20px;font-weight:700;line-height:24px;color:#fbfbfd;letter-spacing:-.5px
+}
+
+.textinput_addr{border-radius:1px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;font-size:13px;height:25px;padding:1px 8px}
+.textinput_addr:focus{box-shadow:inset 0 1px 2px rgba(0,0,0,.3);border:1px solid #4d90fe;outline:none}
+.label_req{font-size:13px;line-height:25px;}
+
+.flex-header {
+  display: flex;
+  justify-content: left;
+  flex-flow: column;
+  background-color: #fbfbfd;
+  margin: 0px;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  padding-left: 68px;
+}
+.flex-header > div {
+  margin-bottom: 0.7em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.flex_input {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  background-color: white;
+  margin: 0 0.5em 0.5em;
+  padding: 2em 0;
+
+  border-radius: 8px;
+  box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.04);
+}
+.flex_input > div {
+  margin: 0 3em 1em;
+}
+
+.flex_input_3 {
+  display: flex;
+  padding: 2em;
+  justify-content: start;
+  background-color: white;
+  margin: 0 0.5em 0.5em;
+  border-radius: 8px;
+  box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.04);
+}
+.flex_input_3 > div {
+  margin: 0em 1em;
+}
+
+.preference {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  margin-bottom: 0.7em;
+}
+@media only screen and (min-width: 992px) {
+  .preference {
+    width: 20em;
+  }
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/df-number-format/2.1.6/jquery.number.min.js"></script>
+<script>
+
+var windowObjectReference = null;
+
+function openNewWindow(url) {
+  var name = '_blank';
+  var specs = 'menubar=no,status=no,toolbar=no,top=50,left=100,width=850,height=850';
+  if(windowObjectReference == null || windowObjectReference.closed) {
+    windowObjectReference = window.open(url, name, specs);
+		
+  } else {
+    windowObjectReference.focus();
+  }
+}
+
+let gReturnValue = {
+  rsltPrc: 0
+};
+
+window.addEventListener("message", (event) => {
+	if (event.origin !== "https://ansim.hf.go.kr")
+	  return;
+	
+	gReturnValue = event.data;
+  hsPrc.value = gReturnValue.rsltPrc;
+  $('#hsPrc').number(true, 0);
+	
+}, false);
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  $('#hsPrc').number(true, 0);
+  $('#openNewWindowButton').click(function() {
+    openNewWindow('https://ansim.hf.go.kr/sise/sisePopup.html');
+  });
+});
+
+</script>
+
+</head>
+<body id="body1">
+
+<div id="board0" class="flex-header">
+    <div>주택 시세 조회 팝업 호출 예제</div>
+</div>
+
+<div class="flex_input" id="input_area0">
+  <div id="app">
+    주택 시세를 조회합니다.
+  </div>
+</div>
+
+<div id="board2A3" class="flex_input_3">
+  <button class="btn_login" id="openNewWindowButton">
+    <span class="btn_text">시세 조회</span>
+  </button>
+  <div class="preference">
+    <label for="name" class="label_req">예상 담보평가액</label>
+		<div>
+      <input type="text" id="hsPrc" name="hsPrc" maxlength="20" size="20" class="textinput_addr" style="text-align: end;">
+		  <span style="font-size:13px;">원</span>
+		</div>
+  </div>
+</div>
+
+<div id="div1" class="flex-header">
+이 웹페이지는 예제입니다.
+<p>
+	<a href="https://github.com/dhkim9549">
+	github.com/dhkim9549
+</p>
+</a>
+</div>
+
+</body></html>

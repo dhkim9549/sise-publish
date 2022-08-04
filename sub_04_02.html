@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>HF 한국주택금융공사</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=medium-dpi" />  
+
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/common.js"></script>
+
+
+<link rel="stylesheet" href="css/font/font.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/layout.css">	
+<link rel="stylesheet" href="css/content.css">	
+<body>
+<div class="skip-navigation">
+	<a href="#gnb_top">주메뉴바로가기</a>
+	<a href="#container">콘텐츠바로가기</a>
+</div>
+
+
+<header>
+    <div class="header">
+
+		<h1><a href="index.html"></a><span>안심전환대출</span></h1>
+		<button type="button" class="toggle" id="mn-ctrs-btns2">메뉴</button>
+		
+		<nav class="mobile-gnb" id="gnb_top">
+			
+			<ul class="top_menulist">			
+				<li class="secs"><a href="sub_01.html" class="depth1-1">상품소개</a>
+					<div class="sub-gnb">
+						<ul class="depth2">
+							<li><a href="sub_01.html">인적항목</a></li>
+							<li><a href="sub_012.html">소득항목</a></li>
+							<li><a href="sub_013.html">부채항목</a></li>
+							<li><a href="sub_014.html">담보항목</a></li>
+							<li><a href="sub_015.html">대출항목</a></li>
+							<li><a href="sub_016.html">유의사항</a></li>
+						</ul>
+					</div>
+				</li>  
+				<li class="secs"><a href="sub_04.html" class="depth1-1">신청방법</a>
+					<div class="sub-gnb">
+						<ul class="depth2">
+							<li><a href="sub_04.html">취급금융기관안내</a></li>
+							<li><a href="sub_05.html">신청절차</a></li>
+							<li><a href="sub_06.html">신청안내</a></li>
+						</ul>
+					</div>
+				</li>
+
+				
+				<li class="secs"><a href="sub_03.html" class="depth1-1">신청자격 알아보기</a></li>
+				<li class="secs"><a href="sub_02.html" class="depth1-1">필요서류</a></li>
+				
+			</ul> 
+		</nav>
+	</div>
+	
+</header>
+<div class="mask-wrap"></div>
+
+
+<div id="container">
+	
+	
+		<div id="content">
+			<div class="con_tit">
+				<h2>신청방법</h2>				
+			</div>
+
+			<div class="conts">
+
+				<div class="u-tab01" id="about-tab">
+					<ul class="con04">
+						<li><a href="sub_04.html"><span>신청기관</span></a></li>
+						<li><a href="sub_04_01.html"><span>신청일정</span></a></li>
+						<li class="active"><a href="sub_04_02.html"><span>대출절차</span></a></li>	
+						<li><a href="sub_04_03.html"><span>신청준비</span></a></li>			
+					</ul>
+				</div>
+
+				<div class="step">
+					<span>1</span>
+					<div class="info_tit">						
+						심사 정보 입력 및 제출
+					</div>
+					<div class="info_con">
+						5부제 달력으로 신청 가능한 날짜 확인 후, 해당 날짜에 공사 “인터넷 금융 서비스” 혹은 “스마트주택금융 어플리케이션”을 공동인증서/금융인증서로 로그인 후 스크래핑을 통해 필수 서류 제출, 대출 심사에 필요한 항목을 입력하여 신청합니다.
+					</div>
+				</div>
+
+
+				<div class="step">
+					<span>2</span>
+					<div class="info_tit">전화상담</div>
+					<div class="info_con">
+						공사 상담원이 고객님께 전화를 드려 신청 정보를 기반으로 상담 후, 심사시 필요한 추가 서류 혹은 신청시 스크래핑 제출이 완료되지 않은 보완 서류를 안내해 드립니다.(최초 서류제출은 스크래핑이 원칙)
+					</div>
+				</div>
+
+
+				<div class="step">
+					<span>3</span>
+					<div class="info_tit">서류제출</div>
+					<div class="info_con">
+						안내받으신 보완/추가 서류를 공사 “인터넷 금융 서비스” 혹은 “스마트주택금융 어플리케이션” 내 간편 서류제출 기능을 통해 직접 서류를 업로드하시면 심사가 진행됩니다.
+					</div>
+				</div>
+
+
+				<div class="step">
+					<span>4</span>
+					<div class="info_tit">심사 및 승인</div>
+					<div class="info_con">
+						공사의 심사를 거쳐 신청에 대한 결과가 고객님께 문자메세지로 발송, 심사 내역은 홈페이지 내 마이페이지를 통해서 확인 가능합니다.
+					</div>
+				</div>
+
+				<div class="step">
+					<span>5</span>
+					<div class="info_tit">은행방문/대출금 수령</div>
+					<div class="info_con">
+						취급금융기관을 방문하여 대출약정 및 근저당 설정서류를 작성하고 대출금을 수령합니다.
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+	
+</div>
+<footer>
+	 <div id="foot">
+		
+		<div class="copy_info">
+			<div class="addtel"><address>부산시 남구 문현금융로40(문현동) 부산국제금융센터 <span>한국주택금융공사 콜센터 1688-8114</span></address></div>
+			<p class="copyright">2022 KOREA HOUSING FINANCE CORPORATION. ALL Rights Reserved.</p>
+		</div>		
+	 </div>
+</footer>
+</body>
+</html>
+
