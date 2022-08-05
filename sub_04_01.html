@@ -14,11 +14,17 @@
 <script src="js/jquery-1.12.3.min.js"></script>
 <script src="js/common.js"></script>
 
-
 <link rel="stylesheet" href="css/font/font.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/layout.css">	
 <link rel="stylesheet" href="css/content.css">	
+
+<style>
+.schd_cont {
+  color:#ff7f00;
+}
+</style>
+
 <body>
 <div class="skip-navigation">
 	<a href="#gnb_top">주메뉴바로가기</a>
@@ -127,28 +133,18 @@
 							<tr>									
 								<td><p class="sun">11</p></td>											
 								<td><p class="sun">12</p></td>											
-								<td class="today">
-									<p class="toda">13</p>
-									<ul class ="info">
-										<li>출생년도 끝자리 2, 7</li>
-									</ul>
-								</td>											
-								<td  class="today">
-									<p class="">14</p>
-									<ul class ="info">
-										<li>출생년도 끝자리 3, 8</li>
-									</ul>
-								</td>											
+								<td><p class="">13</p></td>
+								<td><p class="">14</p></td>		
 								<td  class="today">
 									<p class="">15</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 4, 9</li>
+										<li class="schd_cont">4, 9</li>
 									</ul>
 								</td>
 								<td  class="today">
 									<p class="">16</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 5, 0</li>
+										<li class="schd_cont">5, 0</li>
 									</ul>
 								</td>		
 								<td><p class="sat">17</p></td>																												
@@ -159,31 +155,31 @@
 								<td  class="today">
 									<p class="">19</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 1, 6</li>
+										<li class="schd_cont">1, 6</li>
 									</ul>	
 								</td>											
 								<td  class="today">
 									<p class="">20</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 2, 7</li>
+										<li class="schd_cont">2, 7</li>
 									</ul>
 								</td>											
 								<td  class="today">
 									<p class="">21</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 3, 8</li>
+										<li class="schd_cont">3, 8</li>
 									</ul>
 								</td>											
 								<td  class="today">
 									<p class="">22</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 4, 9</li>
+										<li class="schd_cont">4, 9</li>
 									</ul>
 								</td>
 								<td  class="today">
 									<p class="">23</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 5, 0</li>
+										<li class="schd_cont">5, 0</li>
 									</ul>
 								</td>		
 								<td><p class="sat">24</p></td>																												
@@ -194,11 +190,21 @@
 								<td  class="today">
 									<p class="">26</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 1, 6</li>
+										<li class="schd_cont">1, 6</li>
 									</ul>
 								</td>											
-								<td><p class="">27</p></td>											
-								<td><p class="">28</p></td>											
+								<td  class="today">
+									<p class="">27</p>
+									<ul class ="info">
+										<li class="schd_cont">2, 7</li>
+									</ul>
+								</td>											
+								<td  class="today">
+									<p class="">28</p>
+									<ul class ="info">
+										<li class="schd_cont">3, 8</li>
+									</ul>
+								</td>											
 								<td><p class="">29</p></td>
 								<td><p class="">30</p></td>		
 								<td class="aside"><p class="sat">1</p></td>																											
@@ -208,6 +214,8 @@
 						</tbody>
 					</table>
 				</div>
+
+				<div class="point red"><strong>달력 날짜 밑의 숫자는 출생년도 끝자리를 의미합니다. (1983년생의 경우 끝자리는 3)</strong></div>
 
 				<div class="calendar">
 
@@ -236,28 +244,18 @@
 							<tr>									
 								<td><p class="sun">2</p></td>											
 								<td><p class="sun">3</p></td>											
-								<td class="today">
-									<p class="toda">4</p>
-									<ul class ="info">
-										<li>출생년도 끝자리 2, 7</li>
-									</ul>
-								</td>											
-								<td  class="today">
-									<p class="">5</p>
-									<ul class ="info">
-										<li>출생년도 끝자리 3, 8</li>
-									</ul>
-								</td>											
+								<td><p class="">4</p></td>
+								<td><p class="">5</p></td>
 								<td  class="today">
 									<p class="">6</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 4, 9</li>
+										<li class="schd_cont">4, 9</li>
 									</ul>
 								</td>
 								<td  class="today">
 									<p class="">7</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 5, 0</li>
+										<li class="schd_cont">5, 0</li>
 									</ul>
 								</td>		
 								<td><p class="sat">8</p></td>																												
@@ -269,11 +267,21 @@
 								<td  class="today">
 									<p class="">11</p>
 									<ul class ="info">
-										<li>출생년도 끝자리 1, 6</li>
+										<li class="schd_cont">1, 6</li>
 									</ul>
 								</td>											
-								<td><p class="">12</p></td>												
-								<td><p class="">13</p></td>
+								<td  class="today">
+									<p class="">12</p>
+									<ul class ="info">
+										<li class="schd_cont">2, 7</li>
+									</ul>
+								</td>											
+								<td  class="today">
+									<p class="">13</p>
+									<ul class ="info">
+										<li class="schd_cont">3, 8</li>
+									</ul>
+								</td>											
 								<td><p class="">14</p></td>		
 								<td><p class="sat">15</p></td>																												
 							</tr>
@@ -281,6 +289,8 @@
 						</tbody>
 					</table>
 				</div>
+				
+				<div class="point red"><strong>달력 날짜 밑의 숫자는 출생년도 끝자리를 의미합니다. (1983년생의 경우 끝자리는 3)</strong></div>
 				
 				<div class="top-box" style="padding: 20px 35px; margin-top: 20px">
 					<h4>예 시</h4>

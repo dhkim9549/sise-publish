@@ -7,7 +7,7 @@ header{width:100%; position: relative; min-height:120px; background:#235594; }
 header .header{box-sizing: border-box;  position: relative; z-index:999;}
 header .header h1{position: absolute; left:3.3%;top:35px; display: inline-block; z-index:20;}
 header .header h1 a{display: inline-block; vertical-align:top; width:268px; height:40px; background:url(../img/logo.png) no-repeat 0 0; text-indent: -99999999px;}
-header .header h1 span{position: relative; line-height: 45px; font-size:28px; color:#b1becb; font-family: 'NotoKrL'; letter-spacing:-3px; padding:0px 0 0 15px; margin:0px 0 0 18px;}
+header .header h1 span{position: relative; line-height: 45px; font-size:28px; color:#FFFFFF; font-family: 'NotoKrR'; letter-spacing:-3px; padding:0px 0 0 15px; margin:0px 0 0 18px;}
 header .header h1 span::after{content:''; display:block; top:10px; left:0; position: absolute; background:#6d90b9; width:1px; height:23px; }
 
 .toggle{display:none;}

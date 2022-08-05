@@ -83,11 +83,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		let hsPrcVal = Number(hsPrc.value.replaceAll(',', ''));
 		let brthYrVal = Number(brthYr.value) % 10;
 		if(hsPrcVal <= 300000000) {
+		  if(brthYrVal == 1 || brthYrVal == 6) {
+		    msg = "2022년 9월 19일 (월), 2022년 9월 26일 (월)";
+			}
 		  if(brthYrVal == 2 || brthYrVal == 7) {
-		    msg = "2022년 9월 13일 (화), 2022년 9월 20일 (화)";
+		    msg = "2022년 9월 20일 (화), 2022년 9월 27일 (화)";
 			}
 		  if(brthYrVal == 3 || brthYrVal == 8) {
-		    msg = "2022년 9월 14일 (수), 2022년 9월 21일 (수)";
+		    msg = "2022년 9월 21일 (수), 2022년 9월 28일 (수)";
 			}
 		  if(brthYrVal == 4 || brthYrVal == 9) {
 		    msg = "2022년 9월 15일 (목), 2022년 9월 22일 (목)";
@@ -95,16 +98,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		  if(brthYrVal == 5 || brthYrVal == 0) {
 		    msg = "2022년 9월 16일 (금), 2022년 9월 23일 (금)";
 			}
-		  if(brthYrVal == 1 || brthYrVal == 6) {
-		    msg = "2022년 9월 19일 (월), 2022년 9월 26일 (월)";
-			}
 		}
 		if(hsPrcVal > 300000000 && hsPrcVal <= 400000000) {
+		  if(brthYrVal == 1 || brthYrVal == 6) {
+		    msg = "2022년 10월 11일 (화)";
+			}
 		  if(brthYrVal == 2 || brthYrVal == 7) {
-		    msg = "2022년 10월 4일 (화)";
+		    msg = "2022년 10월 12일 (화)";
 			}
 		  if(brthYrVal == 3 || brthYrVal == 8) {
-		    msg = "2022년 10월 5일 (수)";
+		    msg = "2022년 10월 13일 (수)";
 			}
 		  if(brthYrVal == 4 || brthYrVal == 9) {
 		    msg = "2022년 10월 6일 (목)";
@@ -112,12 +115,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		  if(brthYrVal == 5 || brthYrVal == 0) {
 		    msg = "2022년 10월 7일 (금)";
 			}
-		  if(brthYrVal == 1 || brthYrVal == 6) {
-		    msg = "2022년 10월 11일 (화)";
-			}
 		}
-		$('#reqDy').html("<p style='margin-top:1em;'>신청가능일: " + msg + "</p><p style='margin-top:1em;'>신청방법에 대한 상세한 내용은 신청방법 메뉴에서 확인하세요.</p>");
-		
+		$('#reqDy').html("<p style='margin-top:1em;'>신청가능일: " + msg + "</p><p style='margin-top:1em;'>신청방법에 대한 상세한 내용은 신청방법 메뉴에서 확인바라며, 신청준비 사항을 꼭 확인하여 미리 준비하시기 바랍니다.</p>");
 		$('#reqDy').append('<div style="margin-top:25px;"><ul class="link clearfix"><li><a href="sub_04.html">신청방법<span></span></a></li></div>');
 	});
 
@@ -179,7 +178,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			$('#hsPrc').focus();
 			return;
 		}
-		// popupAlert("안심전환대출 신청이 가능합니다.");
     $('#reqBrthYr').show();
     reqBrthYr.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
@@ -530,9 +528,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 									
 				</div>
 
-
-				<p class="font16 c_red mt8">※ 실제 대출 가능 여부는 심사 시 확인 가능합니다.</p>
-
 				<div style="display:flex; flex-direction: row; justify-content: center; align-items: center" >
 					<button class="button_result"  style="margin:25px;" id="rsltReqButton">
 						<span class="btn_text">결과조회</span>
@@ -546,8 +541,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				<div class="check_list" id="reqBrthYr" style="display: block;">
 					
 					<div class="question"> 
-						<div class="question1">안심전환대출 신청이 가능합니다. 신청일정을 확인하려면 출생년도를 입력하세요.
-						</div>					
+					  <div>
+							<div class="question1">위에서 입력하신 기준으로 고객님은 안심전환대출 신청이 가능합니다.</div>					
+							<div class="point"><strong>(유의사항) 주택의 시세는 변동될 수 있으며, 최종 대출 가능 여부는 실제 대출심사를 통해 확인할 수 있습니다.</strong></div>
+						</div>
+					</div>
+
+					<div class="question"> 
+					  <div>
+							<div class="question1" style="margin-top:15px;">신청일정을 확인하려면 출생년도를 입력하세요.</div>					
+							<div class="point"><strong>(유의사항) 주택가격, 출생년도에 따라 신청가능 일자가 달라지므로 반드시 일정을 사전에 확인하시기 바랍니다.</strong></div>
+						</div>
 					</div>
 
 					<div class="question_sub" style="margin-top:15px;">

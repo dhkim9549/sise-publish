@@ -3,7 +3,7 @@ body{min-width:320px;height:100%;font-size:17px;font-family:"notoKrR",sans-serif
 header{min-height:90px; background:#fff; }
 header .header h1{left:50px;top:25px;}
 header .header h1 a{width:197px; height:30px; background:url(../img/m_logo.png) no-repeat 0 0; background-size:100%;}
-header .header h1 span{position: relative; line-height: 35px; font-size:22px; color:#0054a4; font-family: 'NotoKrL'; letter-spacing:-3px; padding:0px 0 0 15px; margin:0px 0 0 18px;}
+header .header h1 span{position: relative; line-height: 35px; font-size:22px; color:#0054a4; font-family: 'NotoKrR'; letter-spacing:-3px; padding:0px 0 0 15px; margin:0px 0 0 18px;}
 header .header h1 span::after{content:''; display:block; top:9px; left:0; position: absolute; background:#dbe4ee; width:1px; height:19px; }
 
 nav{padding: 0 0% 0 445px;}

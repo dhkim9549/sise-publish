@@ -45,7 +45,7 @@ em, dfn, cite, address, i {font-style: normal;}
 .c_blue{color:#335faa;}
 
 .font_point{font-weight:bold; position: relative;}
-.font_point:after{content:''; display:block; width:100%; height:1px; background:#335faa; left:0; bottom:0px; position:absolute;}
+.font_point:after{content:''; display:block; width:100%; height:1px; left:0; bottom:0px; position:absolute;}
 
 .mt8{margin-top:8px;}
 .wps_100{width:100%;}
