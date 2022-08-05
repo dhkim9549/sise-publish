@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	
   $('#button2').click(function() {
     // window.opener.getReturnValue(JSON.stringify(returnValue));
-		window.opener.postMessage(returnValue, '*');
+    window.opener.postMessage(returnValue, '*');
     window.close();
   });
   document.getElementById("board2A1").addEventListener('keydown', (e) => {
