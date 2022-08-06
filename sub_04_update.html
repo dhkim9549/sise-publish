@@ -11,6 +11,32 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=medium-dpi" />  
 
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+	$('#rsltReqButton').click(function() {
+		/*
+		$('#rslt').html(">>> " + navigator.userAgent);
+		$('#rslt').append(">>> " + navigator.platform);
+		*/
+		let str = navigator.userAgent;
+		str = str.toLowerCase();
+		if(str.includes("droid")) {
+			window.open("https://play.google.com/store/apps/details?id=kr.go.hf.hfappandroid&hl=ko&gl=US", '_blank');
+		} else if(/iPad|iPhone|iPod/.test(navigator.platform)) {
+			window.open("https://apps.apple.com/kr/app/id674985235", '_blank');
+		} else {
+		  window.open("https://bank.hf.go.kr", '_blank');
+		}
+	});
+});
+</script>
+
+<link rel="stylesheet" href="css/font/font.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/layout.css">	
+<link rel="stylesheet" href="css/content.css">	
 <style>
 .button_result {
   color: #fff;
@@ -32,39 +58,13 @@
 .btn_text {
   font-family:'NotoKrR';font-size:20px;line-height:24px;color:#fbfbfd;letter-spacing:-.5px;
 }
-
 </style>
 
-<script src="js/jquery-1.12.3.min.js"></script>
-<script src="js/common.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function(event) {
-  $('#rsltReqButton').click(function() {
-	  // $('#rslt').html(">>> " + navigator.userAgent);
-		let str = navigator.userAgent;
-		str = str.toLowerCase();
-		if(str.includes("droid")) {
-      window.open("https://play.google.com/store/apps/details?id=kr.go.hf.hfappandroid&hl=ko&gl=US", '_blank');
-		} else if(str.includes("ios")) {
-      window.open("https://apps.apple.com/kr/app/id674985235", '_blank');
-		} else {
-		  window.open("https://bank.hf.go.kr", '_blank');
-		}
-  });
-});
-</script>
-
-<link rel="stylesheet" href="css/font/font.css">
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/layout.css">	
-<link rel="stylesheet" href="css/content.css">	
 <body>
 <div class="skip-navigation">
 	<a href="#gnb_top">주메뉴바로가기</a>
 	<a href="#container">콘텐츠바로가기</a>
 </div>
-
 
 <header>
     <div class="header">
