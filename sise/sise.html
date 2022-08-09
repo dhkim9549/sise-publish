@@ -744,7 +744,7 @@ function getAddrList() {
         if(items.length == 0) {
           board1234H.innerHTML = "조회된 건물이 없습니다.";
         } else {
-          board1234H.innerHTML = "<span>건물을 선택하세요.</span>";
+          board1234H.innerHTML = "<p>건물을 선택하세요.</p>";
         }
 
 	      board1234H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
@@ -882,7 +882,7 @@ function getAptSise() {
 function showKbSise() {
   if(kbArr.length > 0) {
     $('#board12345H').html("<span class='bold-header'>국민은행 시세</span>");
-    $('#board12345H').append("<span style='margin-top:1em;'>주택형을 선택하세요.</span>");
+    $('#board12345H').append("<p style='margin-top:1em;'>주택형을 선택하세요.</p>");
 
     board12345H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 
@@ -959,7 +959,7 @@ function showKabSise() {
   
   if(kabArr.length > 0) {
     $('#board123456H').html("<span class='bold-header'>한국부동산원 시세</span>");
-    $('#board123456H').append("<span style='margin-top:1em;'>주택형을 선택하세요.</span>");
+    $('#board123456H').append("<p style='margin-top:1em;'>주택형을 선택하세요.</p>");
     board123456H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   } else {
     $('#board123456H').html("한국부동산원 시세가 없습니다.");
@@ -1055,7 +1055,7 @@ function showOlprDSise(siseMapDstgKeyVal, olprDArr) {
   if(olprDArr.length > 0) {
     $('#board1234567H').html("<span class='bold-header'>공동주택 공시가격</span>");
     if(olprDArr.length > 1) {
-      $('#board1234567H').append("<span style='margin-top:1em;'>동을 선택하세요.</span>");
+      $('#board1234567H').append("<p style='margin-top:1em;'>동을 선택하세요.</p>");
 
       board1234567H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
     }
@@ -1179,7 +1179,7 @@ function showRslt2(prc, prc2) {
   $('#board123456789').empty();
 
   $('#board12345678H').html("조회가 완료되었습니다.");
-  $('#board123456789H').html("<span class='w250'>최저층 여부를 선택하세요.</span>");
+  $('#board123456789H').html("<p>최저층 여부를 선택하세요.</p>");
 
   for(let i = 0; i < 2; i++) {
     let e = document.createElement('div');
