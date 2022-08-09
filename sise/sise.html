@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>주택 시세 조회</title>
 
-<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
-
+<!--
 <style>
 html {
   font-size: 16px;
@@ -197,6 +196,12 @@ body {
 }
 
 </style>
+-->
+<link rel="stylesheet" href="../css/font/font.css">
+<link rel="stylesheet" href="../css/common.css">
+
+<link rel="stylesheet" href="../css/content.css">	
+<link rel="stylesheet" href="../css/sise_pop.css">	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/df-number-format/2.1.6/jquery.number.min.js"></script>
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
@@ -281,6 +286,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
   $('[id^=searchDvcd]').click(function() {
     checkSearchDvcd();
+
+    $('[id^=board1]').hide();
+    $('[id^=board1]').empty();
     
     bldgNm.value = "";
     stnm.value = "";
@@ -401,9 +409,11 @@ function checkSrchDvcd() {
   $('#ltnoBno').val("");
   let srchDvcdVal = getRadioButtonValue('srchDvcd');
   if(srchDvcdVal == '1') {
+    $('#board1').show();
     $('#srchPnlBldgNm').show();
   } else if(srchDvcdVal == '2') {
     $('#srchPnlLtnoBno').show();
+    $('#board1').hide();
   }
 }
 
@@ -734,7 +744,7 @@ function getAddrList() {
         if(items.length == 0) {
           board1234H.innerHTML = "조회된 건물이 없습니다.";
         } else {
-          board1234H.innerHTML = "건물을 선택하세요.";
+          board1234H.innerHTML = "<span>건물을 선택하세요.</span>";
         }
 
 	      board1234H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
@@ -1169,7 +1179,7 @@ function showRslt2(prc, prc2) {
   $('#board123456789').empty();
 
   $('#board12345678H').html("조회가 완료되었습니다.");
-  $('#board123456789H').html("최저층 여부를 선택하세요.");
+  $('#board123456789H').html("<span class='w250'>최저층 여부를 선택하세요.</span>");
 
   for(let i = 0; i < 2; i++) {
     let e = document.createElement('div');
@@ -1256,31 +1266,35 @@ function getRadioButtonValue(varName) {
 
 </head>
 <body id="body1">
+<div class="sise_content">
 
-<div id="board0" class="flex-header">
-    <div><span style="font-family:'NanumGothicExtraBold';font-weight:bold;">주택 시세 조회</span></div>
-</div>
-
-<div class="flex_input" id="input_area">
-  <div class="preference">
-    <label for="name" class="label_req">주택유형을 선택하세요.</label>
-    <div class="select">
-      <input type="radio" id="siseDvcd1" name="siseDvcd" value="1"><label for="siseDvcd1">공동주택</label>
-      <input type="radio" id="siseDvcd2" name="siseDvcd" value="2"><label for="siseDvcd2">단독주택</label>
-    </div>
+  <div id="board0" class="flex-header">
+    <h2>주택 시세 조회</h2>
   </div>
-</div>
 
-<div class="flex_input" id="input_area2">
-  <div class="preference">
-    <label for="name" class="label_req">조회방법을 선택하세요.</label>
-    <div class="select">
-      <input type="radio" id="searchDvcd1" name="searchDvcd" value="1"><label for="searchDvcd1" id="searchDvcd1Label">건물명</label>
-      <input type="radio" id="searchDvcd2" name="searchDvcd" value="2"><label for="searchDvcd2">도로명</label>
-      <input type="radio" id="searchDvcd3" name="searchDvcd" value="3"><label for="searchDvcd3">지번</label>
+  <div class="check_list" style="display:block;" >
+
+    <div class="flex_input" id="input_area" >
+      <div class="preference" >
+        <label for="name" class="item label_req">주택유형을 선택하세요.</label>
+        <div class="select onestep">
+          <input type="radio" id="siseDvcd1" name="siseDvcd" value="1"><label for="siseDvcd1">공동주택</label>
+          <input type="radio" id="siseDvcd2" name="siseDvcd" value="2"><label for="siseDvcd2">단독주택</label>
+        </div>
+			  <div class="point" style="margin-left:20px;">(공동주택) 아파트·연립·다세대, (단독주택) 공동주택 외</div>
+      </div>
     </div>
-  </div>
-</div>
+
+    <div class="flex_input" id="input_area2">
+      <div class="preference">
+        <label for="name" class="item label_req">조회방법을 선택하세요.</label>
+        <div class="select twostep">
+          <input type="radio" id="searchDvcd1" name="searchDvcd" value="1"><label for="searchDvcd1" id="searchDvcd1Label">건물명</label>
+          <input type="radio" id="searchDvcd2" name="searchDvcd" value="2"><label for="searchDvcd2">도로명</label>
+          <input type="radio" id="searchDvcd3" name="searchDvcd" value="3"><label for="searchDvcd3">지번</label>
+        </div>
+      </div>
+    </div>
 
 <!-- citySet -->
 <div id="board1" class="flex-container">
@@ -1296,41 +1310,40 @@ function getRadioButtonValue(varName) {
 
 <div id="board2A1" class="flex_input">
   <div class="preference">
-    <label for="name" class="label_req">건물명</label>
-    <input type="text" id="bldgNm" name="bldgNm" maxlength="30" size="30" class="textinput_addr" style="ime-mode:active">
+    <label for="name" class="label_t">건물명</label>
+    <input type="text" id="bldgNm" name="bldgNm" maxlength="30" class="textinput_addr" style="ime-mode:active; margin-left:10px">
   </div>
 </div>
 
 <div id="board2A2" class="flex_input">
-  <div>
-    <div class="textarea" style="padding: 1em;">
-      <font color="blue">부산광역시 남구 문현금융로 40</font> 입력 방법 예시<br>
-      도로명: <font color="blue">문현금융로</font><br>
-      건물번호 본번: <font color="blue">40</font>
+  <div style="margin-top:30px; font-size:18px">
+    <div class="f16 textarea" style="color:#333;">
+      예시 입력 방법) 부산광역시 남구 문현금융로 40  
+      <div>(도로명: <font color="#1c33a9">문현금융로</font> / 건물번호 본번 :<font color="#1c33a9"> 40</font>)</div>
     </div>
   </div>
   <div class="preference">
-    <label for="name" class="label_req">도로명</label>
-    <input type="text" id="stnm" name="stnm" maxlength="30" class="textinput_addr" style="ime-mode:active">
+    <label for="name" class="label_t">도로명</label>
+    <input type="text" id="stnm" name="stnm" maxlength="30" class="textinput_addr" style="ime-mode:active; margin-left:10px;">
   </div>
   <div class="preference">
-    <label for="name" class="label_req">건물번호 본번</label>
-    <input type="text" id="bldgBno" name="bldgBno" maxlength="30" class="textinput_addr">
+    <label for="name" class="label_t">건물번호 본번</label>
+    <input type="text" id="bldgBno" name="bldgBno" maxlength="30" class="textinput_addr " style="margin-left:10px;">
   </div>
   <div class="preference">
-    <label for="name" class="label_req">건물번호 부번</label>
-    <input type="text" id="bldgBuno" name="bldgBuno" maxlength="30" class="textinput_addr">
+    <label for="name" class="label_t">건물번호 부번</label>
+    <input type="text" id="bldgBuno" name="bldgBuno" maxlength="30" class="textinput_addr" style="margin-left:10px;">
   </div>
 </div>
 
 <div id="board2A3" class="flex_input">
   <div class="preference">
-    <label for="name" class="label_req">지번주소 본번</label>
-    <input type="text" id="ltnoBno" name="ltnoBno" maxlength="10" size="10" class="textinput_addr">
+    <label for="name" class="label_t">지번주소 본번</label>
+    <input type="text" id="ltnoBno" name="ltnoBno" maxlength="10" size="10" class="textinput_addr" style="margin-left:10px;">
   </div>
   <div class="preference">
-    <label for="name" class="label_req">지번주소 부번</label>
-    <input type="text" id="ltnoBuno" name="ltnoBuno" maxlength="10" size="10" class="textinput_addr">
+    <label for="name" class="label_t">지번주소 부번</label>
+    <input type="text" id="ltnoBuno" name="ltnoBuno" maxlength="10" size="10" class="textinput_addr" style="margin-left:10px;"> 
   </div>
 </div>
 
@@ -1341,6 +1354,9 @@ function getRadioButtonValue(varName) {
     </button>
   </div>
 </div>
+
+
+
 
 <div id="board1234H" class="flex-header">
 </div>
@@ -1389,4 +1405,11 @@ function getRadioButtonValue(varName) {
 <div id="div1" class="flex-header">
 </div>
 
+
+</div>
+<!--checklist-->
+
+
+
+</div><!--sise-->
 </body></html>
