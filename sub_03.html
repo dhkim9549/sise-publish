@@ -124,6 +124,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	  $('#reqBrthYr').hide();
 	  brthYr.value = "";
 		$('#reqDy').html("");
+    if(agree_22.checked == false) {
+			popupAlert("기존 대출기관(6개 은행 대출 여부)를 입력하세요.");
+			$('#agree_22').focus();
+			return;
+		}
     if(agree_1.checked == false) {
 			popupAlert("국적을 입력하세요.");
 			$('#agree_1').focus();
@@ -142,11 +147,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(agree_8.checked == false) {
 			popupAlert("상환 부채 정보(기업대출 혹은 대부업 여부)를 입력하세요.");
 			$('#agree_8').focus();
-			return;
-		}
-    if(agree_22.checked == false) {
-			popupAlert("상환 부채 정보(6개 은행 대출 여부)를 입력하세요.");
-			$('#agree_22').focus();
 			return;
 		}
     if(agree_9.checked == false) {
@@ -365,6 +365,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			<div class="conts">
 
 
+				<!-- 5번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">기존 대출기관</div>
+					<div class="question"> 
+						<div class="question1">본인 혹은 배우자(부부공동명의 포함) 소유의 주택으로 받은 가장 오래된 주택담보대출<br />(잔액이 있는 대출 기준)이 6개 은행* 대출 중 하나입니까?
+							<p class="font16 c_green mt8">※ 6개 은행 : 기업, 국민, 농협, 신한, 우리, 하나</p>
+						</div>					
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio5" id="agree_21" value="Y" required=""> <label for="agree_21"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio5" id="agree_22" value="N"> <label for="agree_22"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+				<ul class="banner" id="bank_list">
+					<li><a href="https://www.kbstar.com/" title="새창" target="_blank"><img src="img/bank_01.gif" alt="" /></a></li></li>
+					<li><a href="https://www.ibk.co.kr" title="새창" target="_blank"><img src="img/bank_02.gif" alt="" /></a></li></li>
+					<li><a href="https://banking.nonghyup.com/" title="새창" target="_blank"><img src="img/bank_03.gif" alt="" /></a></li></li>
+					<li><a href="https://www.shinhan.com" title="새창" target="_blank"><img src="img/bank_04.gif" alt="" /></a></li></li>
+					<li><a href="https://wooribank.com" title="새창" target="_blank"><img src="img/bank_05.gif" alt="" /></a></li></li>
+					<li><a href="https://www.kebhana.com" title="새창" target="_blank"><img src="img/bank_06.gif" alt="" /></a></li></li>
+				</ul>
 				
 				
 				<!-- 1번째 항목 -->
@@ -425,31 +449,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 									
 				</div>
 
-
-				<!-- 5번째 항목 -->
-				<div class="check_list">
-					
-					<div class="item">상환 부채 정보</div>
-					<div class="question"> 
-						<div class="question1">본인 혹은 배우자(부부공동명의 포함) 소유의 주택으로 받은 가장 오래된 주택담보대출<br />(잔액이 있는 대출 기준)이 6개 은행* 대출 중 하나입니까?
-							<p class="font16 c_green mt8">※ 6개 은행 : 기업, 국민, 농협, 신한, 우리, 하나</p>
-						</div>					
-						<div class="agree_check">
-							<span class="check_box"><input type="radio" name="radio5" id="agree_21" value="Y" required=""> <label for="agree_21"><span></span>예</label></span>
-							<span class="check_box"><input type="radio" name="radio5" id="agree_22" value="N"> <label for="agree_22"><span></span>아니요</label></span>
-						</div>	
-					</div>
-									
-				</div>
-
-				<ul class="banner" id="bank_list">
-					<li><a href="https://www.kbstar.com/" title="새창" target="_blank"><img src="img/bank_01.gif" alt="" /></a></li></li>
-					<li><a href="https://www.ibk.co.kr" title="새창" target="_blank"><img src="img/bank_02.gif" alt="" /></a></li></li>
-					<li><a href="https://banking.nonghyup.com/" title="새창" target="_blank"><img src="img/bank_03.gif" alt="" /></a></li></li>
-					<li><a href="https://www.shinhan.com" title="새창" target="_blank"><img src="img/bank_04.gif" alt="" /></a></li></li>
-					<li><a href="https://wooribank.com" title="새창" target="_blank"><img src="img/bank_05.gif" alt="" /></a></li></li>
-					<li><a href="https://www.kebhana.com" title="새창" target="_blank"><img src="img/bank_06.gif" alt="" /></a></li></li>
-				</ul>
 
 				<!-- 6번째 항목 -->
 				<div class="check_list">
