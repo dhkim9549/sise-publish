@@ -544,6 +544,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					  <div>
 							<div class="question1">위에서 입력하신 기준으로 고객님은 안심전환대출 신청이 가능합니다.</div>					
 							<div class="point"><strong>(유의사항) 주택의 시세는 변동될 수 있으며, 최종 대출 가능 여부는 실제 대출심사를 통해 확인할 수 있습니다.</strong></div>
+							<div class="point"><strong>대출금액 2억, 30년 만기, 금리 4%, 윈리금 상환방식의 경우 매달 954,000 원 납부 (천 원 미만 절사)</strong></div>
 						</div>
 					</div>
 
@@ -556,21 +557,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					<div class="question_sub" style="margin-top:15px;">
 						<dl>
-							<div style="display:flex;">
-								<div class="preference">
-									<label for="name" class="label_req">출생년도</label>
-									<div>
-										<input type="text" id="brthYr" name="brthYr" maxlength="4" size="4" class="textinput_yr" style="text-align:end;font-size:16px;">
-										년
+
+							<div style="display:flex; flex-direction: column;">
+								<div style="display:flex;">
+									<div class="preference">
+										<label for="name" class="label_req">출생년도</label>
+										<div>
+											<input type="text" id="brthYr" name="brthYr" maxlength="4" size="4" class="textinput_yr" style="text-align:end;font-size:16px;">
+											년
+										</div>
+									</div>
+									<div style="display:flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 15px">
+										<button class="btn_login" id="inqReqDyButton">
+											<span class="btn_text">신청가능일 조회</span>
+										</button>
 									</div>
 								</div>
-								<div style="display:flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 15px">
-									<button class="btn_login" id="inqReqDyButton">
-										<span class="btn_text">신청가능일 조회</span>
-									</button>
+								
+								<div>
+								입력방법 예시: 1984년생인 경우, 1984 또는 84
 								</div>
 							</div>
+							
 						</dl>
+
+
 					</div>									
 
 					<div class="question"> 
