@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		    msg = "2022년 10월 7일 (금)";
 			}
 		}
-		$('#reqDy').html("<p style='margin-top:1em;'>신청가능일: " + msg + "</p><p style='margin-top:1em;'>신청방법에 대한 상세한 내용은 신청방법 메뉴에서 확인바라며, 신청준비 사항을 꼭 확인하여 미리 준비하시기 바랍니다.</p>");
+		$('#reqDy').html("<p style='margin-top:1em; color: #335faa;'>신청가능일: " + msg + "</p><p style='margin-top:1em;'>신청방법에 대한 상세한 내용은 신청방법 메뉴에서 확인바라며, 신청준비 사항을 꼭 확인하여 미리 준비하시기 바랍니다.</p>");
 		$('#reqDy').append('<div style="margin-top:25px;"><ul class="link clearfix"><li><a href="sub_04.html">신청방법<span></span></a></li></div>');
 	});
 
@@ -149,9 +149,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			$('#agree_8').focus();
 			return;
 		}
-    if(agree_9.checked == false) {
+    if(agree_10.checked == false) {
 			popupAlert("상환 부채 정보(변동금리 대출 여부)를 입력하세요.");
-			$('#agree_9').focus();
+			$('#agree_10').focus();
 			return;
 		}
     if(agree_12.checked == false) {
@@ -202,16 +202,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		popupAlert("본 안심전환대출로 기업대출 혹은 대부업대출 상환 불가합니다.");
 		agree_7.checked = false;
   });
-  $('#agree_10').click(function() {
-		popupAlert("본 안심전환대출 대상은 변동금리 대출을 대상으로 합니다.");
-		agree_10.checked = false;
+  $('#agree_9').click(function() {
+		popupAlert("안심전환대출은 아래의 대출을 상환하려는 경우 신청 가능합니다.<br>1. 만기 5년 미만 대출<br>2. 금리 변동주기가 있는 대출<br>3. 일정 기간 동안 고정금리, 이후 일정 기간 동안 변동금리인 혼합형 대출");
+		agree_9.checked = false;
   });
   $('#agree_11').click(function() {
 		popupAlert("담보물, 본건 외 타 주택을 소유하고 있는 경우 신청 불가합니다.");
 		agree_11.checked = false;
   });
   $('#agree_21').click(function() {
-		popupAlert("해당 금융기관으로 신청 부탁드립니다.");
+		popupAlert("기존 대출이 6개 은행인 경우 해당 금융기관으로 안심전환대출을 신청해야 합니다. 아래 링크를 클릭하여 안내 서비스를 받으시기 바랍니다.");
 		agree_21.checked = false;
     $('#bank_list').show();
   });
@@ -455,7 +455,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					
 					<div class="item">상환 부채 정보</div>
 					<div class="question"> 
-						<div class="question1">안심전환대출을 통해 상환하려는 대출이 고정금리가 아닌 변동금리 대출입니까?
+						<div class="question1">안심전환대출을 통해 상환하려는 대출이 고정금리* 대출입니까?
+							<p class="font16 c_green mt8">※ 고정금리: 만기가 5년 이상이면서, 만기까지 금리가 고정된 대출</p>
 						</div>					
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio6" id="agree_9" value="Y" required=""> <label for="agree_9"><span></span>예</label></span>
@@ -543,7 +544,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					  <div>
 							<div class="question1">위에서 입력하신 기준으로 고객님은 안심전환대출 신청이 가능합니다.</div>					
 							<div class="point"><strong>(유의사항) 주택의 시세는 변동될 수 있으며, 최종 대출 가능 여부는 실제 대출심사를 통해 확인할 수 있습니다.</strong></div>
-							<div class="point"><strong>대출금액 2억, 30년 만기, 금리 4%, 윈리금 상환방식의 경우 매달 954,000 원 납부 (천 원 미만 절사)</strong></div>
 						</div>
 					</div>
 
