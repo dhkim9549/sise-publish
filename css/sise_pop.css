@@ -6,8 +6,8 @@
 .sise_content h2{font-family: 'NotoKrB'; text-align:center; font-size:2.8rem; color:#000; position: relative; line-height: 4.4rem; padding-bottom:20px;margin-top:50px}
 .sise_content h2::after{content:''; position: absolute; bottom:0; left:50%; margin-left:-20px; background:#3a3a3a; height:2px; width:40px;}
 .flex-header {
-    width:82%; margin:0 auto;
-    display: block;
+    width:82%; margin:50px auto;
+    display: flex;
     justify-content: left;
     flex-flow: column;
     margin-bottom:20px;
@@ -29,13 +29,13 @@
     justify-content: start;*/
     background-color: #fbfbfd;
     margin-bottom:30px;
-    padding: 1em 0;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.04);
   }
   
   .flex_input > div {
-    margin: 0 1em 1em;
+    margin: 8px 10px;
   }
 
   
@@ -100,14 +100,14 @@
     background-color: #f1f1f1!important;
     width:85%; 
     margin:0 auto;
-    padding: 20px;
+    padding: 8px;
     border-radius:5px;
     margin-bottom:20px;
   }
   .flex-container > div {
     display: flex;
     flex-direction: column;
-    margin: 0.1em;
+    margin: 2px;
     padding: 0.3em 0.8em;
     text-align: left;
     font-size: 16px!important;
