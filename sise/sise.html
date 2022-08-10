@@ -808,9 +808,6 @@ async function getSiseMap(stnmUnonCd) {
   let i = 0;
   while(true) {  
     await new Promise(resolve => setTimeout(resolve, 20));
-    console.log("mapArrProcessedCnt = " + mapArrProcessedCnt);
-    console.log("mapArr.length = " + mapArr.length);
-    console.log("i = " + i);
     if(mapArrProcessedCnt >= mapArr.length) {
       break;
     }
@@ -1316,7 +1313,7 @@ function getRadioButtonValue(varName) {
 </div>
 
 <div id="board2A2" class="flex_input">
-  <div style="margin-top:30px; font-size:18px">
+  <div style="font-size:18px">
     <div class="f16 textarea" style="color:#333;">
       예시 입력 방법) 부산광역시 남구 문현금융로 40  
       <div>(도로명: <font color="#1c33a9">문현금융로</font> / 건물번호 본번 :<font color="#1c33a9"> 40</font>)</div>
