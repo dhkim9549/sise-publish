@@ -178,12 +178,12 @@ table.month tr td.today{background:#f2f2f2}
 
 
 
-.modal{display:none; position:fixed; top:10%; left:50%; transform: translateX(-50%);  width:476px; height:303px; background:#fff; z-index:9999999;}
+.modal{display:none; position:fixed; top:10%; left:50%; transform: translateX(-50%);  width:476px; height:243px; background:#fff; z-index:9999999;}
 @media only screen and (min-width: 768px) {
 	.modal{top:22%;}
 }
 .modal .modal_top{background:#0579cc; text-align: right;}
-.modal .modal_bottom{text-align: center; padding:76px; position: relative; min-height:243px; }
+.modal .modal_bottom{text-align: center; padding:76px; position: relative; min-height:143px; }
 .modal .modal_bottom .btn_close{position: absolute;bottom: 30px;left: 50%; margin-left:-45px; color:#fff; padding:10px 0; background:#01407c; font-size:16px; display:block; margin-top:20px; width:90px;}
 
 .modal.open{display:block;}

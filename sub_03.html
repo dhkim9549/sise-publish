@@ -144,14 +144,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			$('#agree_5').focus();
 			return;
 		}
+    if(agree_10.checked == false) {
+			popupAlert("상환 부채 정보(고정금리 대출 여부)를 입력하세요.");
+			$('#agree_10').focus();
+			return;
+		}
     if(agree_8.checked == false) {
 			popupAlert("상환 부채 정보(기업대출 혹은 대부업 여부)를 입력하세요.");
 			$('#agree_8').focus();
-			return;
-		}
-    if(agree_10.checked == false) {
-			popupAlert("상환 부채 정보(변동금리 대출 여부)를 입력하세요.");
-			$('#agree_10').focus();
 			return;
 		}
     if(agree_12.checked == false) {
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		agree_11.checked = false;
   });
   $('#agree_21').click(function() {
-		popupAlert("기존 대출이 6개 은행인 경우 해당 금융기관으로 안심전환대출을 신청해야 합니다. 아래 링크를 클릭하여 안내 서비스를 받으시기 바랍니다.");
+		popupAlert("해당 금융기관을 클릭하시기 바랍니다.");
 		agree_21.checked = false;
     $('#bank_list').show();
   });
@@ -370,8 +370,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					
 					<div class="item">기존 대출기관</div>
 					<div class="question"> 
-						<div class="question1">본인 혹은 배우자(부부공동명의 포함) 소유의 주택으로 받은 가장 오래된 주택담보대출<br />(잔액이 있는 대출 기준)이 6개 은행* 대출 중 하나입니까?
-							<p class="font16 c_green mt8">※ 6개 은행 : 기업, 국민, 농협, 신한, 우리, 하나</p>
+						<div class="question1" style="max-width:720px;">
+							<div>
+							(단일채무자의 경우) 대환 예정 주택담보대출이 6대 은행* 대출입니까?
+							</div>
+							<div>
+							(다중채무자의 경우) 대환 예정 주택담보대출이 여러 개인 경우 첫 번째 주택담보대출이 6대 은행* 대출입니까?
+							</div>
+							<p class="font16 c_green mt8">※ 6대 은행 : 기업, 국민, 농협, 신한, 우리, 하나</p>
 						</div>					
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio5" id="agree_21" value="Y" required=""> <label for="agree_21"><span></span>예</label></span>
@@ -410,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					
 					<div class="item">배우자 국내 거주</div>
 					<div class="question"> 
-						<div class="question1">신청인의 배우자는 주민등록 등본 혹은 국내거소사실증명원이 발급이 가능합니까?</div>
+						<div class="question1">신청인의 배우자는 주민등록 등본 혹은 국내거소사실증명원 발급이 가능합니까?</div>
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio2" id="agree_3" value="Y" required=""> <label for="agree_3"><span></span>예</label></span>
 							<span class="check_box"><input type="radio" name="radio2" id="agree_4" value="N"> <label for="agree_4"><span></span>아니요</label></span>
@@ -435,21 +441,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				</div>
 
 
-				<!-- 4번째 항목 -->
-				<div class="check_list">
-					
-					<div class="item">상환 부채 정보</div>
-					<div class="question"> 
-						<div class="question1">상환하려는 대출이 기업(사업자)대출 혹은 대부업에서 받은 대출입니까?</div>
-						<div class="agree_check">
-							<span class="check_box"><input type="radio" name="radio4" id="agree_7" value="Y" required=""> <label for="agree_7"><span></span>예</label></span>
-							<span class="check_box"><input type="radio" name="radio4" id="agree_8" value="N"> <label for="agree_8"><span></span>아니요</label></span>
-						</div>	
-					</div>
-									
-				</div>
-
-
 				<!-- 6번째 항목 -->
 				<div class="check_list">
 					
@@ -461,6 +452,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio6" id="agree_9" value="Y" required=""> <label for="agree_9"><span></span>예</label></span>
 							<span class="check_box"><input type="radio" name="radio6" id="agree_10" value="N"> <label for="agree_10"><span></span>아니요</label></span>
+						</div>	
+					</div>
+									
+				</div>
+
+				<!-- 4번째 항목 -->
+				<div class="check_list">
+					
+					<div class="item">상환 부채 정보</div>
+					<div class="question"> 
+						<div class="question1">상환하려는 대출이 기업(사업자)대출 혹은 대부업에서 받은 대출입니까?</div>
+						<div class="agree_check">
+							<span class="check_box"><input type="radio" name="radio4" id="agree_7" value="Y" required=""> <label for="agree_7"><span></span>예</label></span>
+							<span class="check_box"><input type="radio" name="radio4" id="agree_8" value="N"> <label for="agree_8"><span></span>아니요</label></span>
 						</div>	
 					</div>
 									
@@ -506,7 +511,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					
 					<div class="item">주택 시세</div>
 					<div class="question_sub">
-						<dl>
+						<dl style="margin-bottom:0px;">
 							<div>
 								<div style="display:flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 15px">
 									<button class="btn_login" id="openNewWindowButton">
@@ -524,6 +529,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 								</div>
 							</dd>
 						</dl>
+						<p class="font16 c_green mt8">※ 안심전환대출 주택가격은 신청일 기준이오니, 본 신청시 재확인 해주시기 바랍니다.</p>
 					</div>
 									
 				</div>
