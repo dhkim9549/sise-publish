@@ -115,7 +115,7 @@ table { border-collapse: collapse; border-spacing: 0px; width:100%}
 .tbl {margin-bottom:10px; width:100%; table-layout: fixed; font-size:18px; border-top:2px solid #080808;}
 .tbl th {text-align:center; color: #000;}
 .tbl th {padding:18px 8px; border:1px solid #ddd; line-height:30px; vertical-align: middle; box-sizing: border-box; word-break: break-all;}
-.tbl td {padding:25px 46px ; border:1px solid #ddd; line-height:30px; vertical-align: middle; box-sizing: border-box; word-break: break-all;}
+.tbl td {padding:25px 10px ; border:1px solid #ddd; line-height:30px; vertical-align: middle; box-sizing: border-box; word-break: break-all;}
 .tbl td:first-child, .tbl th:first-child {border-left: none;}
 .tbl td:last-child, .tbl th:last-child {border-right: none;}
 .tbl thead tr:first-child th {background:#f7f7f7;}
@@ -250,5 +250,6 @@ table.month tr td.today{background:#f2f2f2}
 	.step span{font-size:20px; width: 35px;   height: 35px; line-height: 35px;}
 	.step .info_con{border-top:0; border-left:5px solid #e7e9ee; padding:25px;}
 
-	.tbl td{padding:25px; font-size:16px; }
+	.tbl td{padding:2px; font-size:16px; }
+	.tbl th{padding:3px;}
 }
