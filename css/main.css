@@ -92,6 +92,10 @@ footer #foot .copy_info p.copyright {font-size: 1.4rem; color:#888; font-family:
 
 }
 
+.banner_fcs {
+	width:147px; height:38px; margin-right:8px;
+}
+
 
 @media screen and (max-width:768px){
 
@@ -106,6 +110,9 @@ footer #foot .copy_info p.copyright {font-size: 1.4rem; color:#888; font-family:
 	#m_left .cont{padding: 0 0 0 20px; min-height: 555px;     background: url(../img/main_model.png) no-repeat right 65px; background-size: 193px;}
 	#m_right{ padding: 0 20px 0 40px; min-height: 530px;     background: url(../img/m_pic.jpg) no-repeat right 0;     background-size: cover;}
 	
+	.banner_fcs {
+		width:116px; height:30px;
+	}
 	.con_text1 .banner img{height:30px; }
 	.con_text1 .sub_tit{font-size:28px;  padding-left:10px;   line-height: 28px;}
 	.con_text1 .sub_tit::before{width:194px; height:21px;}
