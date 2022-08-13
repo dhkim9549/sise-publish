@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				<div class="u-tab01" id="about-tab">
 					<ul class="con04">
-						<li class="active"><a href="sub_04_update.html"><span>신청기관</span></a></li>
+						<li class="active"><a href="sub_04.html"><span>신청기관</span></a></li>
 						<li><a href="sub_04_01.html"><span>신청일정</span></a></li>
 						<li><a href="sub_04_02.html"><span>대출절차</span></a></li>	
 						<li><a href="sub_04_03.html"><span>신청준비</span></a></li>
@@ -109,17 +109,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 				<h3>신청기관 안내</h3>
-				<p><span class="font_point c_blue">2022년 8월 00일 이전에 받은 기존 주택담보대출을 대상으로 신청 가능하며, 그 중 첫 번째 대출이 6개 은행(국민, 기업, 농협, 신한, 우리, 하나)인 경우 반드시 해당 은행에 신청하셔야 합니다.(그 외 금융기관은 공사에 신청)</span></p>
-				
-				<div class="point"><strong>한도대출, 대부업대출, 기업(사업자)대출, 정책모기지론(내집마련 디딤돌대출을 포함한 주택도시기금 대출, 보금자리론 등)을 대상으로는 신청 불가</strong></div>
+				<p>
+					<span class="font_point c_blue">기존 대출이 6대 은행(국민, 기업, 농협, 신한, 우리, 하나) 대출인 경우 해당 은행 창구 또는 온라인으로 신청하고, 기존 대출이 그 외 은행 및 2금융권 대출인 경우 공사 홈페이지(hf.go.kr) 또는 스마트주택금융 App에서 신청접수해야 합니다.</span><br>
+					<span class="font_point c_blue">- (다중채무) 기존 대출이 여러 금융기관에 걸쳐있는 다중채무자의 경우에는 대환 예정 대출 중 첫 번째 대출 금융기관을 기준으로 신청·접수처가 결정됨.</span>
+				</p>
 					
 				<div class="top-box" style="padding: 20px 35px; margin-top: 20px">
 					<h4>예 시</h4>
 					<ul class="list_ul">
-						<li style="margin-top: 0px;"><b>국민은행 1순위</b>, 우리은행 2순위, 보험사 3순위 <span class="font_point c_blue">→ 국민은행으로 신청</span></li>
-						<li style="margin-top: 10px;"><b>수협은행(또는 지방은행) 1순위</b>, 국민은행 2순위 <span class="font_point c_blue">→ 공사로 신청</span></li>
-						<li style="margin-top: 10px;">국민은행 1순위(<span class="font_point">내집마련 디딤돌대출</span>), 우리은행 2순위, 보험사 3순위 <span class="font_point c_blue">→ 우리은행으로 신청</span></li>
-						<li style="margin-top: 10px;">국민은행 1순위(<span class="font_point">내집마련 디딤돌대출</span>), 수협은행(또는 지방은행) 2순위 <span class="font_point c_blue">→ 공사로 신청</span></li>
+						<li style="margin-top: 0px;">(다중채무) <b>국민은행 1순위</b>, 우리은행 2순위, 보험사 3순위 <span class="font_point c_blue">→ 국민은행으로 신청</span></li>
+						<li style="margin-top: 10px;">(다중채무) <b>수협은행(또는 지방은행) 1순위</b>, 국민은행 2순위 <span class="font_point c_blue">→ 공사로 신청</span></li>
+						<li style="margin-top: 10px;">(다중채무) 국민은행 1순위(<span class="font_point">내집마련 디딤돌대출</span>), 우리은행 2순위, 보험사 3순위 <span class="font_point c_blue">→ 우리은행으로 신청</span></li>
+						<li style="margin-top: 10px;">(다중채무) 국민은행 1순위(<span class="font_point">내집마련 디딤돌대출</span>), 수협은행(또는 지방은행) 2순위 <span class="font_point c_blue">→ 공사로 신청</span></li>
+						<li style="margin-top: 10px;">신한은행 <span class="font_point c_blue">→ 신한은행으로 신청</span></li>
+						<li style="margin-top: 10px;">부산은행 <span class="font_point c_blue">→ 공사로 신청</span></li>
+						<li style="margin-top: 10px;">삼성생명 <span class="font_point c_blue">→ 공사로 신청</span></li>
 					</ul>
 					<div class="point" style="margin-top: 10px;"><strong>6개 은행에 신청해야 되는 고객님은 해당은행 사전안내 서비스를 이용하시기 바랍니다(아래↓ 링크 클릭).</strong></div>
 				</div>
@@ -136,14 +140,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					</ul>
 				</div>				
 
-				<!--
-				<div style="display:flex; flex-direction: row; justify-content: center; align-items: center" >
-					<button class="button_result"  style="margin:25px;" id="rsltReqButton">
-						<span class="btn_text">공사에 신청하기</span>
-					</button>
-				</div>
-				-->
-
 				<div style="display:flex; flex-direction: row; justify-content: center; align-items: center" >
 					<div class="btn taC" style="cursor:pointer;" id="rsltReqButton">
 						<a class="sinchang">공사에 신청하기</a>
@@ -155,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				<div class="modal open">
 					<div class="modal_top"><div>알림</div><a href="#" class="modal_close"><img src="img/modal_close.png" alt="닫기" /></a></div>
 					<div class="modal_bottom">
-						<p><span class="font_point c_blue">2022년 8월 00일 이전에 받은 기존 주택담보대출*을 대상으로 신청 가능하며, 그 중 첫 번째 대출이 6개 은행(국민, 기업, 농협, 신한, 우리, 하나)인 경우 반드시 해당 은행에 신청하셔야 합니다.(그 외 금융기관은 공사에 신청)</span></p>
+						<p><span class="font_point c_blue">2022년 8월 16일 이전에 받은 기존 주택담보대출*을 대상으로 신청 가능하며, 주택담보대출이 2개 이상인 경우 가장 먼저 받으신 대출이 6개 은행(국민, 기업, 농협, 신한, 우리, 하나)인 경우 반드시 해당 은행에 신청하셔야 합니다.(그 외 금융기관은 공사에 신청)</span></p>
 				
 						<div class="point" style="margin-left: 0px;"><strong>한도대출, 대부업대출, 기업(사업자)대출, 정책모기지론(내집마련 디딤돌대출을 포함한 주택도시기금 대출, 보금자리론 등)을 대상으로는 신청 불가</strong></div>
 						<a href="#" class="modal_close btn_close">닫기</a>
