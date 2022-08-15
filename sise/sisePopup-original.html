@@ -22,6 +22,10 @@ if(window.wcs) {
 </script>
 <script>
 
+let dd;
+let zloanYm;
+let vv;
+
 function numberOnly(element) {
   element.addEventListener("input", function(event) {
     element.value = element.value.replace(/[^0-9]/g, '');
@@ -143,6 +147,8 @@ function getSearchDvcd() {
     ele[i].checked = false;
   }
   checkSearchDvcd();
+  
+
 }
 
 let citySet;
@@ -452,7 +458,7 @@ function getEhPr() {
           showRslt();
         }
 
-        board1234.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+	      board1234.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
     });
 }
 
@@ -567,7 +573,7 @@ function getAddrList() {
           board1234H.innerHTML = "<p>건물을 선택하세요.</p>";
         }
 
-        board1234H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+	      board1234H.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
     });
 }
 
@@ -632,9 +638,8 @@ async function getSiseMap(stnmUnonCd) {
       break;
     }
     i++;
-    if(20 * i > 30000) {
+    if(20 * i > 3000) {
       alert("시세 조회 중 에러가 발생하였습니다.");
-      return;
     }
   }
   
@@ -1182,6 +1187,9 @@ function getRadioButtonValue(varName) {
   </div>
 </div>
 
+
+
+
 <div id="board1234H" class="flex-header">
 </div>
 <div id="board1234" class="flex-container">
@@ -1229,8 +1237,11 @@ function getRadioButtonValue(varName) {
 <div id="div1" class="flex-header">
 </div>
 
+
 </div>
 <!--checklist-->
+
+
 
 </div><!--sise-->
 </body></html>
