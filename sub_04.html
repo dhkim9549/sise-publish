@@ -13,6 +13,50 @@
 
 <script src="js/jquery-1.12.3.min.js"></script>
 <script src="js/common.js"></script>
+<script type="text/javascript">
+function isMobile(){
+	var UserAgent = navigator.userAgent;
+	if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+	{
+		return true;
+	}else{
+		return false;
+	}
+}
+document.addEventListener("DOMContentLoaded", function(event) {
+	$('#kbButton').click(function() {
+		window.open("https://obank.kbstar.com/quics?page=C103557&cc=b104363:b104516&isNew=Y&prcode=LN20000158", '_blank');
+	});
+	$('#ibButton').click(function() {
+		window.open("http://ibk.kr/안심전환대출", '_blank');
+	});
+	$('#nhButton').click(function() {
+		window.open("https://banking.nonghyup.com", '_blank');
+		// window.open("https://smartmarket.nonghyup.com/content/html/sf/cn/sfgateway.html?NAVIGATE_TYPE=1&SERVICE_ID=SFSL2001R", '_blank');
+	});
+	$('#shButton').click(function() {
+		if(isMobile()) {
+			window.open("https://sol.shinhan.com/sms.jsp?scrid=PR07010185000", '_blank');
+		} else {
+			window.open("https://bank.shinhan.com/bank_bridge.jsp?cr=020308100000&pcd=632121600", '_blank');
+		}
+	});
+	$('#wrButton').click(function() {
+		if(isMobile()) {
+			window.open("https://fin.wontheland.co.kr/apl/web/SCYWEB301S01.do", '_blank');
+		} else {
+			window.open("https://spib.wooribank.com/pib/Dream?withyou=PSLON0422", '_blank');
+		}
+	});
+	$('#hnButton').click(function() {
+		if(isMobile()) {
+			window.open("https://mbp.hanabank.com/oneqplus.jsp?MENUS/cont/product/preliminary_check.jsp", '_blank');
+		} else {
+			window.open("https://kebhana.com/cont/mall/mall29/index.jsp?_menuNo=102785", '_blank');
+		}
+	});
+});
+</script>
 
 
 <link rel="stylesheet" href="css/font/font.css">
@@ -79,13 +123,13 @@
 				<div class="top-box" style="padding: 20px 35px; margin-top: 20px">
 					<h4>예 시</h4>
 					<ul class="list_ul">
-						<li style="margin-top: 0px;">(다중채무) <b>국민은행 1순위</b>, 우리은행 2순위, 보험사 3순위 <span class="font_point c_blue">→ 국민은행으로 신청</span></li>
+						<li style="margin-top: 0px;">(단일채무) 농협은행 주택담보대출 <span class="font_point c_blue">→ 농협은행으로 신청</span></li>
+						<li style="margin-top: 10px;">(단일채무) 부산은행 주택담보대출 <span class="font_point c_blue">→ 공사로 신청</span></li>
+						<li style="margin-top: 10px;">(단일채무) 지역농협(제2금융권) 주택담보대출 <span class="font_point c_blue">→ 공사로 신청</span></li>
+						<li style="margin-top: 10px;">(다중채무) <b>국민은행 1순위</b>, 우리은행 2순위, 보험사 3순위 <span class="font_point c_blue">→ 국민은행으로 신청</span></li>
 						<li style="margin-top: 10px;">(다중채무) <b>수협은행(또는 지방은행) 1순위</b>, 국민은행 2순위 <span class="font_point c_blue">→ 공사로 신청</span></li>
 						<li style="margin-top: 10px;">(다중채무) 국민은행 1순위(<span class="font_point">내집마련 디딤돌대출</span>), 우리은행 2순위, 보험사 3순위 <span class="font_point c_blue">→ 우리은행으로 신청</span></li>
 						<li style="margin-top: 10px;">(다중채무) 국민은행 1순위(<span class="font_point">내집마련 디딤돌대출</span>), 수협은행(또는 지방은행) 2순위 <span class="font_point c_blue">→ 공사로 신청</span></li>
-						<li style="margin-top: 10px;">신한은행 <span class="font_point c_blue">→ 신한은행으로 신청</span></li>
-						<li style="margin-top: 10px;">부산은행 <span class="font_point c_blue">→ 공사로 신청</span></li>
-						<li style="margin-top: 10px;">삼성생명 <span class="font_point c_blue">→ 공사로 신청</span></li>
 					</ul>
 					<div class="point" style="margin-top: 10px;"><strong>6개 은행에 신청해야 되는 고객님은 해당은행 사전안내 서비스를 이용하시기 바랍니다(아래↓ 링크 클릭).</strong></div>
 				</div>
@@ -93,12 +137,12 @@
 				<div>
 					<p><br/></p>
 					<ul class="banner">
-						<li><a href="https://www.kbstar.com/" title="새창" target="_blank"><img src="img/bank_01.gif" alt="" /></a></li></li>
-						<li><a href="https://www.ibk.co.kr" title="새창" target="_blank"><img src="img/bank_02.gif" alt="" /></a></li></li>
-						<li><a href="https://banking.nonghyup.com/" title="새창" target="_blank"><img src="img/bank_03.gif" alt="" /></a></li></li>
-						<li><a href="https://www.shinhan.com/" title="새창" target="_blank"><img src="img/bank_04.gif" alt="" /></a></li></li>
-						<li><a href="https://wooribank.com" title="새창" target="_blank"><img src="img/bank_05.gif" alt="" /></a></li></li>
-						<li><a href="https://www.kebhana.com" title="새창" target="_blank"><img src="img/bank_06.gif" alt="" /></a></li></li>
+						<li><a id="kbButton" style="cursor:pointer;"><img src="img/bank_01.gif" alt="" /></a></li></li>
+						<li><a id="ibButton" style="cursor:pointer;"><img src="img/bank_02.gif" alt="" /></a></li></li>
+						<li><a id="nhButton" style="cursor:pointer;"><img src="img/bank_03.gif" alt="" /></a></li></li>
+						<li><a id="shButton" style="cursor:pointer;"><img src="img/bank_04.gif" alt="" /></a></li></li>
+						<li><a id="wrButton" style="cursor:pointer;"><img src="img/bank_05.gif" alt="" /></a></li></li>
+						<li><a id="hnButton" style="cursor:pointer;"><img src="img/bank_06.gif" alt="" /></a></li></li>
 					</ul>
 				</div>				
 				
@@ -106,9 +150,8 @@
 				<div class="modal open">
 					<div class="modal_top"><div>알림</div><a href="#" class="modal_close"><img src="img/modal_close.png" alt="닫기" /></a></div>
 					<div class="modal_bottom">
-						<p><span class="font_point c_blue">2022년 8월 16일 이전에 받은 기존 주택담보대출*을 대상으로 신청 가능하며, 주택담보대출이 2개 이상인 경우 가장 먼저 받으신 대출이 6개 은행(국민, 기업, 농협, 신한, 우리, 하나)인 경우 반드시 해당 은행에 신청하셔야 합니다.(그 외 금융기관은 공사에 신청)</span></p>
-				
-						<div class="point" style="margin-left: 0px;"><strong>한도대출, 대부업대출, 기업(사업자)대출, 정책모기지론(내집마련 디딤돌대출을 포함한 주택도시기금 대출, 보금자리론 등)을 대상으로는 신청 불가</strong></div>
+						<p><span class="font_point c_blue">기존 대출이 6대 은행(국민, 기업, 농협, 신한, 우리, 하나) 대출인 경우 해당 은행 창구 또는 온라인으로 신청하고, 기존 대출이 그 외 은행 및 2금융권 대출인 경우 공사 홈페이지(hf.go.kr) 또는 스마트주택금융 App에서 신청접수해야 합니다.<br>
+						- (다중채무) 기존 대출이 여러 금융기관에 걸쳐있는 다중채무자의 경우에는 대환 예정 대출 중 첫 번째 대출 금융기관을 기준으로 신청·접수처가 결정됨.</span></p>
 						<a href="#" class="modal_close btn_close">닫기</a>
 					</div>
 				</div>

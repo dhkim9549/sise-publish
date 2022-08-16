@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		agree_11.checked = false;
   });
   $('#agree_21').click(function() {
-		popupAlert("해당 금융기관을 클릭하시기 바랍니다.");
+		popupAlert("기존대출 취급 은행을 클릭하면 해당은행 사전안내 페이지로 이동합니다. 아래의 해당은행을 클릭하시기 바랍니다.");
 		agree_21.checked = false;
     $('#bank_list').show();
   });
@@ -230,6 +230,48 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 });
 
+function isMobile(){
+	var UserAgent = navigator.userAgent;
+	if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+	{
+		return true;
+	}else{
+		return false;
+	}
+}
+document.addEventListener("DOMContentLoaded", function(event) {
+	$('#kbButton').click(function() {
+		window.open("https://obank.kbstar.com/quics?page=C103557&cc=b104363:b104516&isNew=Y&prcode=LN20000158", '_blank');
+	});
+	$('#ibButton').click(function() {
+		window.open("http://ibk.kr/안심전환대출", '_blank');
+	});
+	$('#nhButton').click(function() {
+		window.open("https://banking.nonghyup.com", '_blank');
+		// window.open("https://smartmarket.nonghyup.com/content/html/sf/cn/sfgateway.html?NAVIGATE_TYPE=1&SERVICE_ID=SFSL2001R", '_blank');
+	});
+	$('#shButton').click(function() {
+		if(isMobile()) {
+			window.open("https://sol.shinhan.com/sms.jsp?scrid=PR07010185000", '_blank');
+		} else {
+			window.open("https://bank.shinhan.com/bank_bridge.jsp?cr=020308100000&pcd=632121600", '_blank');
+		}
+	});
+	$('#wrButton').click(function() {
+		if(isMobile()) {
+			window.open("https://fin.wontheland.co.kr/apl/web/SCYWEB301S01.do", '_blank');
+		} else {
+			window.open("https://spib.wooribank.com/pib/Dream?withyou=PSLON0422", '_blank');
+		}
+	});
+	$('#hnButton').click(function() {
+		if(isMobile()) {
+			window.open("https://mbp.hanabank.com/oneqplus.jsp?MENUS/cont/product/preliminary_check.jsp", '_blank');
+		} else {
+			window.open("https://kebhana.com/cont/mall/mall29/index.jsp?_menuNo=102785", '_blank');
+		}
+	});
+});
 </script>
 
 
@@ -383,7 +425,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							<div>
 							(다중채무자의 경우) 대환 예정 주택담보대출이 여러 개인 경우 첫 번째 주택담보대출이 6대 은행* 대출입니까?
 							</div>
-							<p class="font16 c_green mt8">※ 6대 은행 : 기업, 국민, 농협, 신한, 우리, 하나</p>
+							<p class="font16 c_green mt8">※ 6대 은행 : 국민, 기업, 농협, 신한, 우리, 하나</p>
 						</div>					
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio5" id="agree_21" value="Y" required=""> <label for="agree_21"><span></span>예</label></span>
@@ -394,12 +436,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				</div>
 
 				<ul class="banner" id="bank_list">
-					<li><a href="https://www.kbstar.com/" title="새창" target="_blank"><img src="img/bank_01.gif" alt="" /></a></li></li>
-					<li><a href="https://www.ibk.co.kr" title="새창" target="_blank"><img src="img/bank_02.gif" alt="" /></a></li></li>
-					<li><a href="https://banking.nonghyup.com/" title="새창" target="_blank"><img src="img/bank_03.gif" alt="" /></a></li></li>
-					<li><a href="https://www.shinhan.com" title="새창" target="_blank"><img src="img/bank_04.gif" alt="" /></a></li></li>
-					<li><a href="https://wooribank.com" title="새창" target="_blank"><img src="img/bank_05.gif" alt="" /></a></li></li>
-					<li><a href="https://www.kebhana.com" title="새창" target="_blank"><img src="img/bank_06.gif" alt="" /></a></li></li>
+					<li><a id="kbButton" style="cursor:pointer;"><img src="img/bank_01.gif" alt="" /></a></li></li>
+					<li><a id="ibButton" style="cursor:pointer;"><img src="img/bank_02.gif" alt="" /></a></li></li>
+					<li><a id="nhButton" style="cursor:pointer;"><img src="img/bank_03.gif" alt="" /></a></li></li>
+					<li><a id="shButton" style="cursor:pointer;"><img src="img/bank_04.gif" alt="" /></a></li></li>
+					<li><a id="wrButton" style="cursor:pointer;"><img src="img/bank_05.gif" alt="" /></a></li></li>
+					<li><a id="hnButton" style="cursor:pointer;"><img src="img/bank_06.gif" alt="" /></a></li></li>
 				</ul>
 				
 				
@@ -422,7 +464,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					
 					<div class="item">배우자 국내 거주</div>
 					<div class="question"> 
-						<div class="question1">신청인의 배우자는 주민등록 등본 혹은 국내거소사실증명원 발급이 가능합니까?</div>
+						<div class="question1">신청인의 배우자는 주민등록 등본 혹은 국내거소사실증명 발급이 가능합니까?</div>
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio2" id="agree_3" value="Y" required=""> <label for="agree_3"><span></span>예</label></span>
 							<span class="check_box"><input type="radio" name="radio2" id="agree_4" value="N"> <label for="agree_4"><span></span>아니요</label></span>
