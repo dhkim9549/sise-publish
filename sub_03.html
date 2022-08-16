@@ -52,6 +52,11 @@ function popupAlert(msg) {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
+  if (window.document.documentMode) {
+    $('#hsSise').append("<p class='font16 c_red mt8'>※ 인터넷 익스플로러에서는 시세조회가 불가능합니다. 크롬, 엣지, 사파리 등 최신 브라우저에서 조회 바랍니다.</p>");
+  }
+  
   $('#hsPrc').number(true, 0);
 	$('#brthYr').keyup(function () {
     this.value = this.value.replace(/[^0-9\. ]/g,'');
@@ -64,23 +69,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
   $('#bank_list').hide();
   $('#reqBrthYr').hide();
 
-	// Close the modal
-	alert_popup_close.onclick = function() {
-		alert_popup.style.display = "none";
-	}
+  // Close the modal
+  alert_popup_close.onclick = function() {
+    alert_popup.style.display = "none";
+  }
 
-  document.getElementById("brthYr").addEventListener('keydown', (e) => {
-    if(e.key == "Enter") {
+  $("#brthYr").keydown(function (key) {
+    if(key.keyCode == 13) { // Enter
       document.getElementById("inqReqDyButton").click(); 
     }
   });
+  
   $('#inqReqDyButton').click(function() {
 	  if(brthYr.value == "") {
 		  popupAlert("출생년도를 입력하세요.");
 			return;
 		}
 		let msg = "신청가능일: 0000년 0월 0일";
-		let hsPrcVal = Number(hsPrc.value.replaceAll(',', ''));
+		let hsPrcVal = Number(hsPrc.value.replace(/,/g, ''));
 		let brthYrVal = Number(brthYr.value) % 10;
 		if(hsPrcVal <= 300000000) {
 		  if(brthYrVal == 1 || brthYrVal == 6) {
@@ -145,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			return;
 		}
     if(agree_10.checked == false) {
-			popupAlert("상환 부채 정보(고정금리 대출 여부)를 입력하세요.");
+			popupAlert("기존대출 금리유형을 입력하세요.");
 			$('#agree_10').focus();
 			return;
 		}
@@ -167,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			$('#agree_13').focus();
 			return;
 		}
-		let hsPrcVal = Number(hsPrc.value.replaceAll(',', ''));
+		let hsPrcVal = Number(hsPrc.value.replace(/,/g, ''));
 		if(hsPrcVal > 0) {
 			if(hsPrcVal > 400000000) {
 				popupAlert("주택가격 4억 원 초과 건에 대해서는 신청된 금액이 공급계획 미달 시 추가 접수할 계획이오니 추후 별도 공지사항을 확인하시기 바랍니다.");
@@ -510,7 +516,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				<div class="check_list">
 					
 					<div class="item">주택 시세</div>
-					<div class="question_sub">
+					<div class="question_sub" id="hsSise">
 						<dl style="margin-bottom:0px;">
 							<div>
 								<div style="display:flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 15px">
