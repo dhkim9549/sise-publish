@@ -68,6 +68,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   });
   $('#button2').click(function() {
+    sendValue.referrer = document.referrer;
+    sendValue.location = document.location.href;
     fetch("/siseapi/sise/logPrc"
       + "?p=" + encodeURIComponent(JSON.stringify(sendValue)))
     .then(r => r.text())
@@ -1036,8 +1038,6 @@ function showRslt2(prc, prc2) {
       e.style.backgroundColor = "#ffe812";
       returnValue.rsltPrc = e.getAttribute('hsPrc');
       sendValue.rsltPrc = returnValue.rsltPrc
-	 sendValue.referrer = document.referrer;
-	 sendValue.location = document.location.href;
       $('#button2').show();
     });
   }
