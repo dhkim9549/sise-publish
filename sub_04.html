@@ -31,8 +31,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		window.open("http://ibk.kr/안심전환대출", '_blank');
 	});
 	$('#nhButton').click(function() {
-		window.open("https://banking.nonghyup.com", '_blank');
-		// window.open("https://smartmarket.nonghyup.com/content/html/sf/cn/sfgateway.html?NAVIGATE_TYPE=1&SERVICE_ID=SFSL2001R", '_blank');
+		if(isMobile()) {
+			window.open("https://smartbank.nonghyup.com/service/html/sbgateway.html?nhType=1&serviceId=MFEL0122P&WEB=Y", '_blank');
+		} else {
+			window.open("https://smartmarket.nonghyup.com/content/html/sf/cn/sfgateway.html?NAVIGATE_TYPE=1&SERVICE_ID=SFSL2000R", '_blank');
+		}
 	});
 	$('#shButton').click(function() {
 		if(isMobile()) {
