@@ -26,6 +26,25 @@ if(window.wcs) {
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/layout.css">	
 <link rel="stylesheet" href="css/main.css">	
+<style>
+.modal{display:none; position:fixed; top:20%; left:50%; transform: translateX(-50%);  width:476px; height:243px; background:#fff; z-index:9999999;}
+@media only screen and (min-width: 768px) {
+	.modal{top:32%;}
+}
+.modal .modal_top{background:#0579cc; text-align: right;}
+.modal .modal_bottom{text-align: center; padding:76px; position: relative; min-height:143px; }
+.modal .modal_bottom .btn_close{position: absolute;bottom: 30px;left: 50%; margin-left:-45px; color:#fff; padding:10px 0; background:#01407c; font-size:16px; display:block; margin-top:20px; width:90px;}
+.modal.open{display:block;}
+.modal.open .modal_top{display: flex; justify-content: space-between;}
+.modal.open .modal_top div{color:#fff;  padding: 15px;}
+.modal.open .modal_bottom{padding:30px 30px; text-align: left; background:#fff;}
+.modal.open .modal_bottom .btn_close{position: relative; text-align: center; ;bottom: auto;  }
+.modal_close {cursor: pointer;}
+@media screen and (max-width:720px){
+	.modal{width: 90%; margin:0px;}
+}
+</style>
+
 <body>
 <div class="skip-navigation">
 	<a href="#gnb_top">주메뉴바로가기</a>
@@ -108,6 +127,14 @@ if(window.wcs) {
 			
 		</div>
 	</div>	
+
+				<div class="modal open">
+					<div class="modal_top"><div>보이스 피싱 관련 당부말씀</div><a href="#" class="modal_close"><img src="img/modal_close.png" alt="닫기" /></a></div>
+					<div class="modal_bottom">
+						<p><span class="font_point c_blue">공사 콜센터는 '안심전환대출', '저금리대환' 등으로 고객님께 전화를 통한 대출권유나 앱설치를 요구하지 않으니 주의하시기 바랍니다.</span></p>
+						<a href="#" class="modal_close btn_close">닫기</a>
+					</div>
+				</div>
 	
 </div>
 <footer>

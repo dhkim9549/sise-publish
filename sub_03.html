@@ -41,7 +41,7 @@ let gReturnValue = {
 
 function getReturnValue(returnValue) {
   gReturnValue = JSON.parse(returnValue);
-  hsPrc.value = gReturnValue.rsltPrc;
+  hsPrc.value = Math.floor(gReturnValue.rsltPrc / 1000000);
   $('#hsPrc').number(true, 0);
 }
 
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			return;
 		}
 		let msg = "신청가능일: 0000년 0월 0일";
-		let hsPrcVal = Number(hsPrc.value.replace(/,/g, ''));
+		let hsPrcVal = Number(hsPrc.value.replace(/,/g, '')) * 1000000;
 		let brthYrVal = Number(brthYr.value) % 10;
 		if(hsPrcVal <= 300000000) {
 		  if(brthYrVal == 1 || brthYrVal == 6) {
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			$('#agree_13').focus();
 			return;
 		}
-		let hsPrcVal = Number(hsPrc.value.replace(/,/g, ''));
+		let hsPrcVal = Number(hsPrc.value.replace(/,/g, '') * 1000000);
 		if(hsPrcVal > 0) {
 			if(hsPrcVal > 400000000) {
 				popupAlert("주택가격 4억 원 초과 건에 대해서는 신청된 금액이 공급계획 미달 시 추가 접수할 계획이오니 추후 별도 공지사항을 확인하시기 바랍니다.");
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 }
 
-.textinput_prc{border-radius:1px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;font-size:13px;height:25px;padding:1px 8px;width:90%;}
+.textinput_prc{border-radius:1px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;font-size:13px;height:25px;padding:1px 8px;width:60%;}
 .textinput_prc:focus{box-shadow:inset 0 1px 2px rgba(0,0,0,.3);border:1px solid #4d90fe;outline:none}
 @media only screen and (min-width: 992px) {
   .textinput_prc {
@@ -575,7 +575,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 									<label for="name" class="label_req">예상 담보평가액</label>
 									<div>
 										<input type="text" id="hsPrc" name="hsPrc" maxlength="20" size="20" class="textinput_prc" style="text-align:end;font-size:16px;">
-										원
+										백만 원
 									</div>
 								</div>
 							</dd>
