@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		*/
 		let str = navigator.userAgent;
 		str = str.toLowerCase();
-		if(str.includes("droid")) {
+		if(str.indexOf("droid") >= 0) {
 			// window.open("https://play.google.com/store/apps/details?id=kr.go.hf.hfappandroid&hl=ko&gl=US", '_blank');
 			window.open("https://ht2.hf.go.kr/app/hf_app_url.html", '_blank');
 		} else if(/iPad|iPhone|iPod/.test(navigator.platform)) {
