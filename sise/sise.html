@@ -120,6 +120,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   $('[id^=srchDvcd]').click(function() {
     checkSrchDvcd();
   });
+  
+  const date = new Date();
+  if(date.getDay() == 5 && date.getHours() <= 8) {
+    $('#msg').show();
+  } else {
+    $('#msg').hide();
+  }
 });
 
 function getSearchDvcd() {
@@ -1108,9 +1115,7 @@ function getRadioButtonValue(varName) {
           <input type="radio" id="siseDvcd2" name="siseDvcd" value="2"><label for="siseDvcd2">단독주택</label>
         </div>
         <div class="point" style="margin-left:20px;">(공동주택) 아파트·연립·다세대, (단독주택) 공동주택 외</div>
-	   <!--
-        <div class="point" style="margin-left:20px;">금요일 오전 7시 ~ 9시 공동주택 시세 갱신 작업 중에는 공동주택 시세 조회가 중단될 수 있습니다.</div>
-	   -->
+        <div id="msg" class="point" style="margin-left:20px;">금요일 오전 7시 ~ 9시 공동주택 시세 갱신 작업 중에는 공동주택 시세 조회가 중단될 수 있습니다.</div>
       </div>
     </div>
 
