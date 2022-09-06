@@ -29,9 +29,6 @@
     font-weight: 100;
     text-align: right;
 }
-.about01-tab:target {
-  display: block;
-}
 </style>
 
 <body>
@@ -99,9 +96,7 @@
 						});
 						
 						var hashVal = window.location.hash;
-						// console.log("hashVal = " + hashVal);
-						if((hashVal + "") == "#vtap7") {
-							console.log("click vtab7");
+						if(hashVal == "#vtap7") {
 							$('#vtab7text').click();
 						}
 					});
