@@ -17,8 +17,51 @@
 <script type="text/javascript" src="https://www.hf.go.kr/_common/js/skin.js" charset="UTF-8"></script>
 
 <script>
+function isMobile(){
+	var UserAgent = navigator.userAgent;
+	if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+	{
+		return true;
+	}else{
+		return false;
+	}
+}
 document.addEventListener("DOMContentLoaded", function(event) {
-	$('#rsltReqButton').click(function() {
+	$('#kbButton').click(function() {
+		window.open("https://obank.kbstar.com/quics?page=C103557&cc=b104363:b104516&isNew=Y&prcode=LN20000158", '_blank');
+	});
+	$('#ibButton').click(function() {
+		window.open("http://ibk.kr/안심전환대출", '_blank');
+	});
+	$('#nhButton').click(function() {
+		if(isMobile()) {
+			window.open("https://smartbank.nonghyup.com/service/html/sbgateway.html?nhType=1&serviceId=MFEL0122P&WEB=Y", '_blank');
+		} else {
+			window.open("https://smartmarket.nonghyup.com/content/html/sf/cn/sfgateway.html?NAVIGATE_TYPE=1&SERVICE_ID=SFSL2000R", '_blank');
+		}
+	});
+	$('#shButton').click(function() {
+		if(isMobile()) {
+			window.open("https://sol.shinhan.com/sms.jsp?scrid=PR07010185000", '_blank');
+		} else {
+			window.open("https://bank.shinhan.com/bank_bridge.jsp?cr=020308100000&pcd=632121600", '_blank');
+		}
+	});
+	$('#wrButton').click(function() {
+		if(isMobile()) {
+			window.open("https://fin.wontheland.co.kr/apl/web/SCYWEB301S01.do", '_blank');
+		} else {
+			window.open("https://spib.wooribank.com/pib/Dream?withyou=PSLON0422", '_blank');
+		}
+	});
+	$('#hnButton').click(function() {
+		if(isMobile()) {
+			window.open("https://mbp.hanabank.com/oneqplus.jsp?MENUS/cont/product/preliminary_check.jsp", '_blank');
+		} else {
+			window.open("https://kebhana.com/cont/mall/mall29/index.jsp?_menuNo=102785", '_blank');
+		}
+	});
+	$('#hfReqButton').click(function() {
 		/*
 		$('#rslt').html(">>> " + navigator.userAgent);
 		$('#rslt').append(">>> " + navigator.platform);
@@ -138,17 +181,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				<div>
 					<p><br/></p>
 					<ul class="banner">
-						<li><a href="https://www.kbstar.com/" title="새창" target="_blank"><img src="img/bank_01.gif" alt="" /></a></li></li>
-						<li><a href="https://www.ibk.co.kr" title="새창" target="_blank"><img src="img/bank_02.gif" alt="" /></a></li></li>
-						<li><a href="https://banking.nonghyup.com/" title="새창" target="_blank"><img src="img/bank_03.gif" alt="" /></a></li></li>
-						<li><a href="https://www.shinhan.com/" title="새창" target="_blank"><img src="img/bank_04.gif" alt="" /></a></li></li>
-						<li><a href="https://wooribank.com" title="새창" target="_blank"><img src="img/bank_05.gif" alt="" /></a></li></li>
-						<li><a href="https://www.kebhana.com" title="새창" target="_blank"><img src="img/bank_06.gif" alt="" /></a></li></li>
+						<li><a id="kbButton" style="cursor:pointer;"><img src="img/bank_01.gif" alt="" /></a></li></li>
+						<li><a id="ibButton" style="cursor:pointer;"><img src="img/bank_02.gif" alt="" /></a></li></li>
+						<li><a id="nhButton" style="cursor:pointer;"><img src="img/bank_03.gif" alt="" /></a></li></li>
+						<li><a id="shButton" style="cursor:pointer;"><img src="img/bank_04.gif" alt="" /></a></li></li>
+						<li><a id="wrButton" style="cursor:pointer;"><img src="img/bank_05.gif" alt="" /></a></li></li>
+						<li><a id="hnButton" style="cursor:pointer;"><img src="img/bank_06.gif" alt="" /></a></li></li>
 					</ul>
 				</div>				
 
 				<div style="display:flex; flex-direction: row; justify-content: center; align-items: center" >
-					<div class="btn taC" style="cursor:pointer;" id="rsltReqButton">
+					<div class="btn taC" style="cursor:pointer;" id="hfReqButton">
 						<a class="sinchang">공사에 신청하기</a>
 					</div>
 				</div>
