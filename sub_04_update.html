@@ -28,10 +28,18 @@ function isMobile(){
 }
 document.addEventListener("DOMContentLoaded", function(event) {
 	$('#kbButton').click(function() {
-		window.open("https://obank.kbstar.com/quics?page=C103557&cc=b104363:b104516&isNew=Y&prcode=LN20000158", '_blank');
+		if(isMobile()) {
+			window.open("https://obank.kbstar.com/quics?page=C041244&scheme=kbbank&pageid=D010680", '_blank');
+		} else {
+			window.open("https://obank.kbstar.com/quics?page=C103557&cc=b104363:b104516&isNew=Y&prcode=LN20000158", '_blank');
+		}
 	});
 	$('#ibButton').click(function() {
-		window.open("http://ibk.kr/안심전환대출", '_blank');
+		if(isMobile()) {
+			window.open("https://onebank.ibk.co.kr/ibs/jsp/com/comWeb2App.jsp?service_type=openmenu&menuid=fnc_lon_020000_1&ALL_PDCD=02212070029", '_blank');
+		} else {
+			window.open("https://mybank.ibk.co.kr/uib/jsp/guest/ntr/ntr70/ntr7015/PNTR701500_i2.jsp?lncd=02&grcd=21&tmcd=207&pdcd=0029", '_blank');
+		}
 	});
 	$('#nhButton').click(function() {
 		if(isMobile()) {
@@ -42,14 +50,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	});
 	$('#shButton').click(function() {
 		if(isMobile()) {
-			window.open("https://sol.shinhan.com/sms.jsp?scrid=PR07010185000", '_blank');
+			window.open("https://sol.shinhan.com/sup/common/callSupInstallService.jsp?screenid=PR07010185000", '_blank');
 		} else {
 			window.open("https://bank.shinhan.com/bank_bridge.jsp?cr=020308100000&pcd=632121600", '_blank');
 		}
 	});
 	$('#wrButton').click(function() {
 		if(isMobile()) {
-			window.open("https://fin.wontheland.co.kr/apl/web/SCYWEB301S01.do", '_blank');
+			window.open("https://wontheland.page.link/main", '_blank');
 		} else {
 			window.open("https://spib.wooribank.com/pib/Dream?withyou=PSLON0422", '_blank');
 		}
@@ -75,9 +83,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			// window.open("https://apps.apple.com/kr/app/id674985235", '_blank');
 			window.open("https://ht2.hf.go.kr/app/hf_app_url.html", '_blank');
 		} else {
-		  // window.open("https://bank.hf.go.kr", '_blank');
+		  window.open("https://bank.hf.go.kr", '_blank');
 		  // window.open("https://www.hf.go.kr/hf/index.do", '_blank');
-		  NetFunnel_Action({action_id : 'ansim', skin_id : 'PC'}, "https://bank.hf.go.kr");
+		  // NetFunnel_Action({action_id : 'ansim', skin_id : 'PC'}, "https://bank.hf.go.kr");
 		}
 	});
 });

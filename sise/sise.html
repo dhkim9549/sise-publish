@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
   
   const date = new Date();
-  if((date.getDay() == 2 || date.getDay() == 5) && date.getHours() <= 8) {
+  if(date.getDay() == 5 && date.getHours() <= 8) {
     $('#msg').show();
   } else {
     $('#msg').hide();

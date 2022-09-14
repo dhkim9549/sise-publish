@@ -1,4 +1,4 @@
-<!-- 신청방법 -->
+<!-- 신청하기 -->
 <!doctype html>
 <html lang="ko">
 <head>
@@ -13,7 +13,8 @@
 
 <script src="js/jquery-1.12.3.min.js"></script>
 <script src="js/common.js"></script>
-<script type="text/javascript">
+
+<script>
 function isMobile(){
 	var UserAgent = navigator.userAgent;
 	if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
@@ -25,10 +26,18 @@ function isMobile(){
 }
 document.addEventListener("DOMContentLoaded", function(event) {
 	$('#kbButton').click(function() {
-		window.open("https://obank.kbstar.com/quics?page=C103557&cc=b104363:b104516&isNew=Y&prcode=LN20000158", '_blank');
+		if(isMobile()) {
+			window.open("https://obank.kbstar.com/quics?page=C041244&scheme=kbbank&pageid=D010680", '_blank');
+		} else {
+			window.open("https://obank.kbstar.com/quics?page=C103557&cc=b104363:b104516&isNew=Y&prcode=LN20000158", '_blank');
+		}
 	});
 	$('#ibButton').click(function() {
-		window.open("http://ibk.kr/안심전환대출", '_blank');
+		if(isMobile()) {
+			window.open("https://onebank.ibk.co.kr/ibs/jsp/com/comWeb2App.jsp?service_type=openmenu&menuid=fnc_lon_020000_1&ALL_PDCD=02212070029", '_blank');
+		} else {
+			window.open("https://mybank.ibk.co.kr/uib/jsp/guest/ntr/ntr70/ntr7015/PNTR701500_i2.jsp?lncd=02&grcd=21&tmcd=207&pdcd=0029", '_blank');
+		}
 	});
 	$('#nhButton').click(function() {
 		if(isMobile()) {
@@ -39,14 +48,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	});
 	$('#shButton').click(function() {
 		if(isMobile()) {
-			window.open("https://sol.shinhan.com/sms.jsp?scrid=PR07010185000", '_blank');
+			window.open("https://sol.shinhan.com/sup/common/callSupInstallService.jsp?screenid=PR07010185000", '_blank');
 		} else {
 			window.open("https://bank.shinhan.com/bank_bridge.jsp?cr=020308100000&pcd=632121600", '_blank');
 		}
 	});
 	$('#wrButton').click(function() {
 		if(isMobile()) {
-			window.open("https://fin.wontheland.co.kr/apl/web/SCYWEB301S01.do", '_blank');
+			window.open("https://wontheland.page.link/main", '_blank');
 		} else {
 			window.open("https://spib.wooribank.com/pib/Dream?withyou=PSLON0422", '_blank');
 		}
@@ -58,20 +67,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			window.open("https://kebhana.com/cont/mall/mall29/index.jsp?_menuNo=102785", '_blank');
 		}
 	});
+	$('#hfReqButton').click(function() {
+		/*
+		$('#rslt').html(">>> " + navigator.userAgent);
+		$('#rslt').append(">>> " + navigator.platform);
+		*/
+		let str = navigator.userAgent;
+		str = str.toLowerCase();
+		if(str.indexOf("droid") >= 0) {
+			window.open("https://ht2.hf.go.kr/app/hf_app_url.html", '_blank');
+		} else if(/iPad|iPhone|iPod/.test(navigator.platform)) {
+			window.open("https://ht2.hf.go.kr/app/hf_app_url.html", '_blank');
+		} else {
+		  window.open("https://bank.hf.go.kr", '_blank');
+		}
+	});
 });
 </script>
-
 
 <link rel="stylesheet" href="css/font/font.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/layout.css">	
 <link rel="stylesheet" href="css/content.css">	
+
 <body>
 <div class="skip-navigation">
 	<a href="#gnb_top">주메뉴바로가기</a>
 	<a href="#container">콘텐츠바로가기</a>
 </div>
-
 
 <header>
     <div class="header">
@@ -82,13 +105,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		<nav class="mobile-gnb" id="gnb_top">
 			
 			<ul class="top_menulist">			
-				<li class="secs"><a href="sub_01.html" class="depth1-1">상품소개</a>
-				</li>  
-				<li class="secs"><a href="sub_04.html" class="depth1-1">신청방법</a>
-				</li>
+				<li class="secs"><a href="sub_01.html" class="depth1-1">상품소개</a></li>  
 				<li class="secs"><a href="sub_03.html" class="depth1-1">신청자격 알아보기</a></li>
+				<li class="secs"><a href="sub_04_update.html" class="depth1-1">신청하기</a></li>
 				<li class="secs"><a href="sub_02.html" class="depth1-1">필요서류</a></li>
-				
 			</ul> 
 		</nav>
 	</div>
@@ -102,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	
 		<div id="content">
 			<div class="con_tit">
-				<h2>신청방법</h2>				
+				<h2>신청하기</h2>
 			</div>
 
 			<div class="conts">
@@ -134,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						<li style="margin-top: 10px;">(다중채무) 국민은행 1순위(<span class="font_point">내집마련 디딤돌대출</span>), 우리은행 2순위, 보험사 3순위 <span class="font_point c_blue">→ 우리은행으로 신청</span></li>
 						<li style="margin-top: 10px;">(다중채무) 국민은행 1순위(<span class="font_point">내집마련 디딤돌대출</span>), 수협은행(또는 지방은행) 2순위 <span class="font_point c_blue">→ 공사로 신청</span></li>
 					</ul>
-					<div class="point" style="margin-top: 10px;"><strong>6개 은행에 신청해야 되는 고객님은 해당은행 사전안내 서비스를 이용하시기 바랍니다(아래↓ 링크 클릭).</strong></div>
+					<div class="point" style="margin-top: 10px;"><strong>6개 은행에 신청해야 되는 고객님은 해당은행을 이용하시기 바랍니다(아래↓ 링크 클릭).</strong></div>
 				</div>
 				
 				<div>
@@ -148,7 +168,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						<li><a id="hnButton" style="cursor:pointer;"><img src="img/bank_06.gif" alt="" /></a></li></li>
 					</ul>
 				</div>				
+
+				<div style="display:flex; flex-direction: row; justify-content: center; align-items: center" >
+					<div class="btn taC" style="cursor:pointer;" id="hfReqButton">
+						<a class="sinchang">공사에 신청하기</a>
+					</div>
+				</div>
 				
+				<div id="rslt"></div>
 				
 				<div class="modal open">
 					<div class="modal_top"><div>알림</div><a href="#" class="modal_close"><img src="img/modal_close.png" alt="닫기" /></a></div>
@@ -158,9 +185,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						<a href="#" class="modal_close btn_close">닫기</a>
 					</div>
 				</div>
-
-
-
 				
 			</div>
 		</div>

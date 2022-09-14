@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // window.opener.getReturnValue(JSON.stringify(returnValue));
       // window.opener.postMessage(returnValue, '*');
       // window.close();
-	 location.href = "https://app2-dev.hf.go.kr/MBCS00M000?rsltPrc=" + returnValue.rsltPrc;
+	 location.href = "https://app2.hf.go.kr/MBCS00M000?rsltPrc=" + returnValue.rsltPrc;
     });
   });
   document.getElementById("board2A1").addEventListener('keydown', (e) => {
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   const date = new Date();
-  if((date.getDay() == 2 || date.getDay() == 5) && date.getHours() <= 8) {
+  if(date.getDay() == 5 && date.getHours() <= 8) {
     $('#msg').show();
   } else {
     $('#msg').hide();
