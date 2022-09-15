@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="../css/common.css">
 
 <link rel="stylesheet" href="../css/content.css">	
-<link rel="stylesheet" href="../css/sise_pop.css">	
+<link rel="stylesheet" href="../css/sise_pop.css">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/df-number-format/2.1.6/jquery.number.min.js"></script>
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   $('[id^=board2]').hide();
   $('#button1').hide();
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
   
   fetchCitySet();
@@ -59,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   numberOnly(document.getElementById("ltnoBno"));
   numberOnly(document.getElementById("ltnoBuno"));
   noSpace(document.getElementById("stnm"));
+  numberFormat('prePrc');
   
   document.getElementById("button1").addEventListener("click", function() {
     if(siseDvcdVal == '1') {
@@ -123,6 +126,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     checkSrchDvcd();
   });
 
+  document.getElementById('prePrc').addEventListener("input", function(event) {
+    let prePrcVal = Number(document.getElementById('prePrc').value.replace(/[^0-9]/g, ''));
+    if(prePrcVal > 0) {
+      sendValue.siseType = "INPUT";
+      sendValue.rsltPrc = prePrcVal;
+      returnValue.rsltPrc = prePrcVal;
+      $('#button2').show();
+    } else {
+      $('#button2').hide();
+    }
+  });
+
   const date = new Date();
   if(date.getDay() == 5 && date.getHours() <= 8) {
     $('#msg').show();
@@ -138,6 +153,7 @@ function getSearchDvcd() {
   $('[id^=board2]').hide();
   $('#button1').hide();
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
 
   $('#input_area2').show();
@@ -191,6 +207,7 @@ function getCitySet() {
   $('[id^=board2]').hide();
   $('#button1').hide();
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
   
   citySet.forEach((x, i) => {
@@ -250,6 +267,7 @@ function getSgguSet(city) {
   $('[id^=board2]').hide();
   $('#button1').hide();
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
   
   citySel = city;
@@ -291,6 +309,7 @@ function getEmdSet(sggu) {
   $('[id^=board2]').hide();
   $('#button1').hide();
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
 
   sgguSel = sggu;
@@ -330,6 +349,7 @@ function showBldgNm() {
   $('#board2A1').show();
   $('#button1').show();
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
   board2A1.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
@@ -340,6 +360,7 @@ function showStnm() {
 	$('#board2A2').show();
   $('#button1').show();
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
 }
 
@@ -355,6 +376,7 @@ function showLtno() {
 function getEhPr() {
 
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
   $('[id^=board1234]').hide();
   $('[id^=board1234]').html("");
@@ -456,7 +478,9 @@ function getEhPr() {
         });
         
         if(items.length == 0) {
-          board1234H.innerHTML = "조회된 개별주택이 없습니다.";
+          board1234H.innerHTML = "조회된 개별주택이 없습니다.<br>예상 담보평가액을 입력하세요.";
+          $('#bbb1').show();
+          $('#prePrc').focus();
         } else {
           $('#board1234H').html("<span class='bold-header'>개별주택 공시가격</span>");
           showRslt();
@@ -469,6 +493,7 @@ function getEhPr() {
 function getAddrList() {
 
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
   $('[id^=board1234]').hide();
   $('[id^=board1234]').html("");
@@ -572,7 +597,9 @@ function getAddrList() {
         });
         
         if(items.length == 0) {
-          board1234H.innerHTML = "조회된 건물이 없습니다.";
+          board1234H.innerHTML = "조회된 건물이 없습니다.<br>예상 담보평가액을 입력하세요.";
+          $('#bbb1').show();
+          $('#prePrc').focus();
         } else {
           board1234H.innerHTML = "<p>건물을 선택하세요.</p>";
         }
@@ -618,6 +645,7 @@ async function getSiseMap(stnmUnonCd) {
   mapArrProcessedCnt = -1;
 
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
   $('[id^=board12345]').hide();
   $('[id^=board12345]').html("");
@@ -883,6 +911,7 @@ function showOlprDSise(siseMapDstgKeyVal, olprDArr) {
 
   $('[id^=board123456789]').hide();
   $('#button2').hide();
+  $('#bbb1').hide();
   
   if(olprDArr.length > 0) {
     $('#board1234567H').html("<span class='bold-header'>공동주택 공시가격</span>");
@@ -947,6 +976,7 @@ function showOlprSise(olprArr) {
 
   $('[id^=board123456789]').hide();
   $('#button2').hide();
+  $('#bbb1').hide();
   $('#board1234567').empty();
   
   if(olprArr.length > 0) {
@@ -1006,6 +1036,7 @@ function showRslt() {
 function showRslt2(prc, prc2) {
 
   $('#button2').hide();
+  $('#bbb1').hide();
   returnValue.rsltPrc = 0;
   $('#board123456789H').show();
   $('#board123456789').show();
@@ -1096,6 +1127,17 @@ function getRadioButtonValue(varName) {
   }
   return selectedValue;
 } 
+
+function numberFormat(elementId) {
+  let element = document.getElementById(elementId);
+  element.addEventListener("input", function(event) {
+    element.value = element.value.replace(/[^0-9]/g, '');
+    element.value = numberWithCommas(element.value);
+  });
+}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 </script>
 
@@ -1225,6 +1267,16 @@ function getRadioButtonValue(varName) {
 </div>
 
 <div class="flex_input" id="board123456789A">
+</div>
+
+<div id="bbb1" class="flex_input">
+  <div class="preference">
+    <label for="name" class="label_t" style="width: 100%">예상 담보평가액</label>
+    <div>
+      <input type="text" id="prePrc" name="prePrc" maxlength="20" size="20" class="textinput_addr" style="text-align:end; width:80%;">
+	 원
+    </div>
+  </div>
 </div>
 
 <div class="flex_input_2">
