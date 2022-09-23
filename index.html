@@ -20,6 +20,14 @@ wcs_add["wa"] = "15a2949ebc44480";
 if(window.wcs) {
   wcs_do();
 }
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	//Hide modal
+	window.addEventListener('click', (e) => {
+		$("#popupMsg").css("display", "none");
+	});
+});
+
 </script>
 
 <link rel="stylesheet" href="css/font/font.css">
@@ -114,10 +122,10 @@ if(window.wcs) {
 			
 	</div>	
 
-				<div class="modal open">
+				<div class="modal open" id="popupMsg">
 					<div class="modal_top"><div>보이스 피싱 관련 당부말씀</div><a href="#" class="modal_close"><img src="img/modal_close.png" alt="닫기" /></a></div>
 					<div class="modal_bottom">
-						<p><span class="font_point c_blue">공사 콜센터는 '안심전환대출', '저금리대환' 등으로 고객님께 전화를 통한 대출권유나 앱설치를 요구하지 않으니 주의하시기 바랍니다.</span></p>
+						<p><span class="font_point c_blue">주택금융공사는 안심전환대출, 저금리 대환 등으로 고객님께 앱 설치 요구, 대출 권유, 대출금 상환 등을 요구하지 않습니다. 금융기관 직원을 사칭해 금융거래법 위반 등을 언급하며 특정 사이트 접속, 어플 설치를 유도한 후 계좌입금을 요구한다면 보이스 피싱입니다.</span></p>
 						<a href="#" class="modal_close btn_close">닫기</a>
 					</div>
 				</div>
