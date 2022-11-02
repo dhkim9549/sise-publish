@@ -88,38 +88,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		let msg = "신청가능일: 0000년 0월 0일";
 		let hsPrcVal = Number(hsPrc.value.replace(/,/g, '')) * 1000000;
 		let brthYrVal = Number(brthYr.value) % 10;
-		if(hsPrcVal <= 300000000) {
+		if(hsPrcVal <= 600000000) {
 		  if(brthYrVal == 1 || brthYrVal == 6) {
-		    msg = "2022년 9월 19일 (월), 2022년 9월 26일 (월)";
+		    msg = "2022년 11월 7일 (월), 2022년 11월 14일 (월)";
 			}
 		  if(brthYrVal == 2 || brthYrVal == 7) {
-		    msg = "2022년 9월 20일 (화), 2022년 9월 27일 (화)";
+		    msg = "2022년 11월 8일 (화), 2022년 11월 15일 (화)";
 			}
 		  if(brthYrVal == 3 || brthYrVal == 8) {
-		    msg = "2022년 9월 21일 (수), 2022년 9월 28일 (수)";
+		    msg = "2022년 11월 9일 (수), 2022년 11월 16일 (수)";
 			}
 		  if(brthYrVal == 4 || brthYrVal == 9) {
-		    msg = "2022년 9월 15일 (목), 2022년 9월 22일 (목)";
+		    msg = "2022년 11월 10일 (목), 2022년 11월 17일 (목)";
 			}
 		  if(brthYrVal == 5 || brthYrVal == 0) {
-		    msg = "2022년 9월 16일 (금), 2022년 9월 23일 (금)";
-			}
-		}
-		if(hsPrcVal > 300000000 && hsPrcVal <= 400000000) {
-		  if(brthYrVal == 1 || brthYrVal == 6) {
-		    msg = "2022년 10월 13일 (목)";
-			}
-		  if(brthYrVal == 2 || brthYrVal == 7) {
-		    msg = "2022년 10월 11일 (화)";
-			}
-		  if(brthYrVal == 3 || brthYrVal == 8) {
-		    msg = "2022년 10월 12일 (수)";
-			}
-		  if(brthYrVal == 4 || brthYrVal == 9) {
-		    msg = "2022년 10월 6일 (목)";
-			}
-		  if(brthYrVal == 5 || brthYrVal == 0) {
-		    msg = "2022년 10월 7일 (금)";
+		    msg = "2022년 11월 11일 (금), 2022년 11월 18일 (금)";
 			}
 		}
 		$('#reqDy').html("<p style='margin-top:1em; color: #335faa;'>신청가능일: " + msg + "</p><p style='margin-top:1em;'>신청방법에 대한 상세한 내용은 신청방법 메뉴에서 확인바라며, 신청준비 사항을 꼭 확인하여 미리 준비하시기 바랍니다.</p>");
@@ -128,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   $('#rsltReqButton').click(function() {
 	  $('#reqBrthYr').hide();
-	  brthYr.value = "";
+	  // brthYr.value = "";
 		$('#reqDy').html("");
     if(agree_22.checked == false) {
 			popupAlert("기존 대출기관(6개 은행 대출 여부)를 입력하세요.");
@@ -175,8 +158,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 		let hsPrcVal = Number(hsPrc.value.replace(/,/g, '') * 1000000);
 		if(hsPrcVal > 0) {
-			if(hsPrcVal > 400000000) {
-				popupAlert("주택가격 4억 원 초과 건에 대해서는 신청된 금액이 공급계획 미달 시 추가 접수할 계획이오니 추후 별도 공지사항을 확인하시기 바랍니다.");
+			if(hsPrcVal > 600000000) {
+				popupAlert("주택가격이 신청일 기준 6억 원을 초과할 경우 취급 불가합니다.");
 				return;
 			}
 		} else {
@@ -201,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		agree_4.checked = false;
   });
   $('#agree_6').click(function() {
-		popupAlert("소득 7천만원 이하인 경우 신청 가능합니다.");
+		popupAlert("소득 1억원 이하인 경우 신청 가능합니다.");
 		agree_6.checked = false;
   });
   $('#agree_7').click(function() {
@@ -460,7 +443,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					
 					<div class="item">부부합산 연소득<br />(미혼인 경우 단독)</div>
 					<div class="question"> 
-						<div class="question1">7천만원 이하입니까?</div>
+						<div class="question1">1억원 이하입니까?</div>
 						<div class="agree_check">
 							<span class="check_box"><input type="radio" name="radio3" id="agree_5" value="Y" required=""> <label for="agree_5"><span></span>예</label></span>
 							<span class="check_box"><input type="radio" name="radio3" id="agree_6" value="N"> <label for="agree_6"><span></span>아니요</label></span>
@@ -581,7 +564,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							<div class="point"><strong>(유의사항) 주택의 시세는 변동될 수 있으며, 최종 대출 가능 여부는 실제 대출심사를 통해 확인할 수 있습니다.</strong></div>
 						</div>
 					</div>
-
+					
+					<!--
 					<div class="question"> 
 					  <div>
 							<div class="question1" style="margin-top:15px;">신청일정을 확인하려면 출생년도를 입력하세요.</div>					
@@ -614,9 +598,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							</div>
 							
 						</dl>
-
-
 					</div>									
+					-->
 
 					<div class="question"> 
 						<div class="question1" id="reqDy">
