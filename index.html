@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 <link rel="stylesheet" href="css/layout.css">	
 <link rel="stylesheet" href="css/main.css">	
 <style>
-.modal{display:none; position:fixed; top:20%; left:50%; transform: translateX(-50%);  width:476px; height:243px; background:#fff; z-index:9999999;}
+.modal{display:none; position:fixed; top:8%; left:50%; transform: translateX(-50%);  width:476px; height:243px; background:#fff; z-index:9999999;}
 @media only screen and (min-width: 768px) {
-	.modal{top:32%;}
+	.modal{top:27%;}
 }
 .modal .modal_top{background:#0579cc; text-align: right;}
 .modal .modal_bottom{text-align: center; padding:76px; position: relative; min-height:143px; }
@@ -125,8 +125,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				<div class="modal open" id="popupMsg">
 					<div class="modal_top"><div>보이스 피싱 관련 당부말씀</div><a href="#" class="modal_close"><img src="img/modal_close.png" alt="닫기" /></a></div>
-					<div class="modal_bottom">
-						<p><span class="font_point c_blue">주택금융공사는 안심전환대출, 저금리 대환 등으로 고객님께 앱 설치 요구, 대출 권유, 대출금 상환 등을 요구하지 않습니다. 금융기관 직원을 사칭해 금융거래법 위반 등을 언급하며 특정 사이트 접속, 어플 설치를 유도한 후 계좌입금을 요구한다면 보이스 피싱입니다.</span></p>
+					<div class="modal_bottom" style="line-height: 23px;">
+						<p>
+							<span class="font_point c_blue">주택금융공사는 안심전환대출, 저금리 대환 등으로 고객님께 앱 설치 요구, 대출 권유, 대출금 상환 등을 요구하지 않습니다. 금융기관 직원을 사칭해 금융거래법 위반 등을 언급하며 특정 사이트 접속, 어플 설치를 유도한 후 계좌입금을 요구한다면 보이스 피싱입니다.</span><br>
+						</p>
+						<p style="margin-top: 10px;">
+							<span class="font_point c_blue" style="color: #000000;">최근 아래와 같이 공사와 무관한 보이스피싱 문자 발송이 급증하고 있으니 각별히 유의해 주시기 바랍니다.</span><br>
+						</p>
+						<p style="margin-top: 10px; border: solid; padding: 5px;">
+							<span class="font_point c_blue" style="color: #000000;">
+							제목 HF 한국주택금융공사 안내<br>
+							[Web발신]<br>
+							(광고)<br>
+							주택담보대출 1.2% ~ 3.9% 고정금리전환 / 전세 담보대출 전환 / 3년 ~ 30년까지 장기 고정금리 맞춤형 안심전환대출입니다! 신속히 신청해 주시기 바랍니다. (이하 생략)
+							</span>
+						</p>
 						<a href="#" class="modal_close btn_close">닫기</a>
 					</div>
 				</div>
