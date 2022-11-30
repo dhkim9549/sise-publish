@@ -58,9 +58,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
   
   $('#hsPrc').number(true, 0);
-	$('#brthYr').keyup(function () {
-    this.value = this.value.replace(/[^0-9\. ]/g,'');
-  });
 	
   $('#openNewWindowButton').click(function() {
     openNewWindow('sise/sise.html');
@@ -74,44 +71,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     alert_popup.style.display = "none";
   }
 
-  $("#brthYr").keydown(function (key) {
-    if(key.keyCode == 13) { // Enter
-      document.getElementById("inqReqDyButton").click(); 
-    }
-  });
-  
-  $('#inqReqDyButton').click(function() {
-	  if(brthYr.value == "") {
-		  popupAlert("출생년도를 입력하세요.");
-			return;
-		}
-		let msg = "신청가능일: 0000년 0월 0일";
-		let hsPrcVal = Number(hsPrc.value.replace(/,/g, '')) * 1000000;
-		let brthYrVal = Number(brthYr.value) % 10;
-		if(hsPrcVal <= 600000000) {
-		  if(brthYrVal == 1 || brthYrVal == 6) {
-		    msg = "2022년 11월 7일 (월), 2022년 11월 14일 (월)";
-			}
-		  if(brthYrVal == 2 || brthYrVal == 7) {
-		    msg = "2022년 11월 8일 (화), 2022년 11월 15일 (화)";
-			}
-		  if(brthYrVal == 3 || brthYrVal == 8) {
-		    msg = "2022년 11월 9일 (수), 2022년 11월 16일 (수)";
-			}
-		  if(brthYrVal == 4 || brthYrVal == 9) {
-		    msg = "2022년 11월 10일 (목), 2022년 11월 17일 (목)";
-			}
-		  if(brthYrVal == 5 || brthYrVal == 0) {
-		    msg = "2022년 11월 11일 (금), 2022년 11월 18일 (금)";
-			}
-		}
-		$('#reqDy').html("<p style='margin-top:1em; color: #335faa;'>신청가능일: " + msg + "</p><p style='margin-top:1em;'>신청방법에 대한 상세한 내용은 신청방법 메뉴에서 확인바라며, 신청준비 사항을 꼭 확인하여 미리 준비하시기 바랍니다.</p>");
-		$('#reqDy').append('<div style="margin-top:25px;"><ul class="link clearfix"><li><a href="sub_04.html">신청방법<span></span></a></li></div>');
-	});
-
   $('#rsltReqButton').click(function() {
 	  $('#reqBrthYr').hide();
-	  brthYr.value = "";
 		$('#reqDy').html("");
     if(agree_22.checked == false) {
 			popupAlert("기존 대출기관(6개 은행 대출 여부)를 입력하세요.");
@@ -563,45 +524,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							<div class="question1">위에서 입력하신 기준으로 고객님은 안심전환대출 신청이 가능합니다.</div>					
 							<div class="point"><strong>(유의사항) 주택의 시세는 변동될 수 있으며, 최종 대출 가능 여부는 실제 대출심사를 통해 확인할 수 있습니다.</strong></div>
 						</div>
-					</div>
-					
-					<div class="question"> 
-					  <div>
-							<div class="question1" style="margin-top:15px;">신청일정을 확인하려면 출생년도를 입력하세요.</div>					
-							<div class="point"><strong>(유의사항) 주택가격, 출생년도에 따라 신청가능 일자가 달라지므로 반드시 일정을 사전에 확인하시기 바랍니다.</strong></div>
-						</div>
-					</div>
-
-					<div class="question_sub" style="margin-top:15px;">
-						<dl>
-
-							<div style="display:flex; flex-direction: column;">
-								<div style="display:flex;">
-									<div class="preference">
-										<label for="name" class="label_req">출생년도</label>
-										<div>
-											<input type="text" id="brthYr" name="brthYr" maxlength="4" size="4" class="textinput_yr" style="text-align:end;font-size:16px;">
-											년
-										</div>
-									</div>
-									<div style="display:flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 15px">
-										<button class="btn_login" id="inqReqDyButton">
-											<span class="btn_text">신청가능일 조회</span>
-										</button>
-									</div>
-								</div>
-								
-								<div>
-								입력방법 예시: 1984년생인 경우, 1984 또는 84
-								</div>
-							</div>
-							
-						</dl>
-					</div>									
-
-					<div class="question"> 
-						<div class="question1" id="reqDy">
-						</div>					
 					</div>
 
 				</div>
