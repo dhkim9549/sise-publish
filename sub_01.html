@@ -117,6 +117,24 @@ function compareIntAmt() {
     width: 20em;
   }
 }
+
+.filler {
+	height:30px;
+}
+@media only screen and (min-width: 992px) {
+	.filler {
+		width:30px;
+	}
+}
+
+.btn_flow {
+	display:flex; flex-direction:column; margin-top:25px; align-items: start;
+}
+@media only screen and (min-width: 992px) {
+	.btn_flow {
+		display:flex; flex-direction:row; margin-top:10px; align-items: center;
+	}
+}
 .btn_login {
   display:block;width:180px;padding:13px 0 13px;
   border:solid 1px rgba(0,0,0,.15);background-color:#B40F1F;box-sizing:border-box;padding:13px 0;border-radius:5.4px
@@ -498,7 +516,7 @@ function compareIntAmt() {
 
 					<div class="check_list">
 						
-						<div class="question_sub" style="margin-left:25px;">
+						<div class="question_sub" style="margin-left:10px;">
 							<dl style="margin-bottom:0px;">
 								<dd>
 									<div class="preference">
@@ -517,11 +535,13 @@ function compareIntAmt() {
 									</div>
 								</dd>
 							</dl>
-							<div style="display:flex; flex-direction:row;">
-								<button class="btn_login" id="calButton" style="margin-top:10px;">
+							<div class="btn_flow">
+								<button class="btn_login" id="calButton">
 									<span class="btn_text">예상 이자 절감액 확인</span>
 								</button>
-								<div id="rsltTbl" style="margin-top:25px; margin-left:20px;">
+								<div class="filler">
+								</div>
+								<div id="rsltTbl">
 									<p id="rsltMsg" style="font-family: NanumGothic, 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', sans-serif;font-size: 25px;font-weight: 700;line-height: 25px;color: blue;"></p>
 								</div>
 							</div>
