@@ -19,7 +19,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
   numberFormat('loanAmt');
-  numberFormat('loanTermCnt');
   $('#loanRat').number(true, 2);
 
   $('#calButton').click(function() {
@@ -51,13 +50,13 @@ function getMonPmt(A, b, n) {
 function compareIntAmt() {
 	let loanAmtVal = Number(loanAmt.value.replaceAll(",", ""));
 	let loanRatVal = Number(loanRat.value.replaceAll(",", ""));
-	let loanTermCntVal = Number(loanTermCnt.value.replaceAll(",", ""));
+	let loanTermCntVal = 360;
 	let monPmtAmt = Math.round(getMonPmt(loanAmtVal, loanRatVal / 100 / 12, loanTermCntVal));
 	let loanRamt = loanAmtVal;
 
 	let loanAmtVal2 = Number(loanAmt.value.replaceAll(",", ""));
-	let loanRatVal2 = 3.80;
-	let loanTermCntVal2 = 120;
+	let loanRatVal2 = 3.9;
+	let loanTermCntVal2 = 360;
 	let monPmtAmt2 = Math.round(getMonPmt(loanAmtVal2, loanRatVal2 / 100 / 12, loanTermCntVal2));
 	let loanRamt2 = loanAmtVal2;
 	
@@ -65,59 +64,22 @@ function compareIntAmt() {
 	let intSum2 = 0;
 	
 	$('#rsltTbl').show();
-	rsltTblB.innerHTML = "";
+	rsltMsg.innerHTML = "";
 	
 	for(let i = 1; i <= 12; i++) {
 	
-		const newTr = document.createElement("tr");
-		rsltTblB.appendChild(newTr);
-		
-		const newTd = document.createElement("td");
-		newTr.appendChild(newTd);
-		newTd.innerHTML = i;
-
 		let intAmt = Math.round(loanRamt * loanRatVal / 100 / 12);
 		intSum += intAmt;
 		loanRamt = Math.max(loanRamt + intAmt - monPmtAmt, 0);
-		const newTd1 = document.createElement("td");
-		newTr.appendChild(newTd1);
-		newTd1.innerHTML = $.number(intAmt);
 
 		let intAmt2 = Math.round(loanRamt2 * loanRatVal2 / 100 / 12);
 		intSum2 += intAmt2;
 		loanRamt2 = Math.max(loanRamt2 + intAmt2 - monPmtAmt2, 0);
-		const newTd2 = document.createElement("td");
-		newTr.appendChild(newTd2);
-		newTd2.innerHTML = $.number(intAmt2);
-
-		const newTd3 = document.createElement("td");
-		newTr.appendChild(newTd3);
-		newTd3.innerHTML = $.number(intAmt - intAmt2);
 	
 	}
 	
-	{
-
-		const newTr = document.createElement("tr");
-		rsltTblB.appendChild(newTr);
-		
-		const newTd = document.createElement("td");
-		newTr.appendChild(newTd);
-		newTd.innerHTML = "합계";
-
-		const newTd1 = document.createElement("td");
-		newTr.appendChild(newTd1);
-		newTd1.innerHTML = $.number(intSum);
-
-		const newTd2 = document.createElement("td");
-		newTr.appendChild(newTd2);
-		newTd2.innerHTML = $.number(intSum2);
-
-		const newTd3 = document.createElement("td");
-		newTr.appendChild(newTd3);
-		newTd3.innerHTML = $.number(intSum - intSum2);
-	}
-	
+	rsltMsg.innerHTML = $.number(intSum - intSum2) + ' 원';
+	rsltMsg.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});	
 }
 
 </script>
@@ -126,6 +88,7 @@ function compareIntAmt() {
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/layout.css">	
 <link rel="stylesheet" href="css/content.css">	
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic">
 
 <style>
 .word-right {
@@ -155,11 +118,11 @@ function compareIntAmt() {
   }
 }
 .btn_login {
-  display:block;width:150px;padding:13px 0 13px;
+  display:block;width:180px;padding:13px 0 13px;
   border:solid 1px rgba(0,0,0,.15);background-color:#B40F1F;box-sizing:border-box;padding:13px 0;border-radius:5.4px
 }
 .btn_text {
-  font-family:'NotoKrR';font-size:20px;line-height:24px;color:#fbfbfd;letter-spacing:-.5px;
+  font-family:'NotoKrR';font-size:18px;line-height:24px;color:#fbfbfd;letter-spacing:-.5px;
 }
 
 </style>
@@ -212,7 +175,7 @@ function compareIntAmt() {
 						<li><a href="#vtab4"><span>담보항목</span></a></li>
 						<li><a href="#vtab6"><span>유의사항</span></a></li>
 						<li><a href="#vtab7" id="vtab7text"><span>자주하는질문</span></a></li>
-						<li><a href="#vtab8" id="vtab8text"><span>대출이자비교</span></a></li>
+						<li><a href="#vtab8" id="vtab8text"><span>이자 절감액 확인</span></a></li>
 					</ul>
 				</div>
 
@@ -530,32 +493,23 @@ function compareIntAmt() {
 				
 				<div class="about01-tab" id="vtab8" style="display:none;">
 					
-					<h3>대출이자 비교</h3>
-					<p style="margin-bottom:25px;">(이자 계산방식 안내) 이자 계산 시 원리금균등상환방식을 기준으로 하며, 안심전환대출의 연간 이자액은 10년 만기 상품을 기준으로 계산합니다. </p>
+					<h3>이자 절감액 확인</h3>
+					<p style="margin-bottom:25px;color:red;">고객님께서 안심전환대출을 받을 경우 예상되는 연간 이자 절감액은?</p>
 
-					<!-- 9번째 항목 -->
 					<div class="check_list">
 						
-						<div class="item">기존대출 정보</div>
-						<div class="question_sub" id="hsSise">
+						<div class="question_sub" style="margin-left:25px;">
 							<dl style="margin-bottom:0px;">
 								<dd>
 									<div class="preference">
-										<label for="name" class="label_req">대출원금</label>
+										<label for="name" class="label_req">본인 현재 대출 잔액</label>
 										<div>
 											<input type="text" id="loanAmt" name="loanAmt" maxlength="20" size="20" class="textinput_prc" style="text-align:end;font-size:16px;">
 											원
 										</div>
 									</div>
 									<div class="preference">
-										<label for="name" class="label_req">대출기간</label>
-										<div>
-											<input type="text" id="loanTermCnt" name="loanTermCnt" maxlength="3" size="3" class="textinput_prc" style="text-align:end;font-size:16px;">
-											개월
-										</div>
-									</div>
-									<div class="preference">
-										<label for="name" class="label_req">대출금리</label>
+										<label for="name" class="label_req">본인 현재 대출 금리</label>
 										<div>
 											<input type="text" id="loanRat" name="loanRat" maxlength="5" size="5" class="textinput_prc" style="text-align:end;font-size:16px;">
 											%
@@ -563,44 +517,19 @@ function compareIntAmt() {
 									</div>
 								</dd>
 							</dl>
-							<p class="font16 c_green mt8">※ 상환방식은 원리금균등을 가정</p>
-							<button class="btn_login" id="calButton" style="margin-top:10px;">
-								<span class="btn_text">계산하기</span>
-							</button>
+							<div style="display:flex; flex-direction:row;">
+								<button class="btn_login" id="calButton" style="margin-top:10px;">
+									<span class="btn_text">예상 이자 절감액 확인</span>
+								</button>
+								<div id="rsltTbl" style="margin-top:25px; margin-left:20px;">
+									<p id="rsltMsg" style="font-family: NanumGothic, 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', sans-serif;font-size: 25px;font-weight: 700;line-height: 25px;color: blue;"></p>
+								</div>
+							</div>
+							<p class="font16 c_green mt8" style="margin-top:30px;">※ 해당 계산은 현재 대출과 안심전환대출 모두 30년 만기와 원리금균등상환방식을 가정한 것으로, 보유하신 대출의 만기와 상환방식 등에 따라 차이가 날 수 있습니다.</p>
+							<p class="font16 c_green mt8">※ 안심전환대출 30년 만기 금리 3.9% (청년우대 0.1%p 적용)</p>
+							<p class="font16 c_green mt8">※ 안심전환대출 취급 가능 최대 금액은 3억6천만원입니다.</p>
 						</div>
-						
-										
 					</div>
-
-
-
-					<div id="rsltTbl">
-					
-						<p class="word-right">(원)</p>
-						<table class="tbl taC mt15">
-						<caption></caption>
-						<thead>
-						<tr>
-							<th scope="col">납입회차</th>
-							<th scope="col">기존대출 이자</th>
-							<th scope="col">안심전환대출 이자</th>
-							<th scope="col">이자 차액</th>
-						</tr>
-						</thead>
-						<tbody id="rsltTblB">
-						</tbody>
-						</table>
-						
-						<div style="font-size:18px;">* 안심전환대출: 만기 10년, 금리 3.80%</div>
-						<div style="font-size:18px;">* 최초 1년 납입기간의 대출이자 비교입니다.</div>
-					
-					</div>
-
-
-
-
-					
-
 				</div>
 			</div>
 		</div>
